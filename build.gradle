@@ -1,0 +1,27 @@
+buildscript {
+    // Project dependencies, note that some of the will be removed and cleaned up in the future
+    ext {
+        nav_version = "2.5.3"
+        accompanist_version = '0.27.0'
+        constraintlayout_compose = "1.0.1"
+        kotlinx_coroutines_core = "1.6.4"
+        timber = "5.0.1"
+        lifecycle_viewmodel_ktx = "2.6.1"
+        lifecycle_runtime_ktx = "2.6.1"
+        core_ktx = "1.9.0"
+        espresso_core = "3.4.0"
+        compose_material3 = "1.1.0-beta01"
+        lifecycle_viewmodel_ktx = "2.6.0-alpha03"
+        logging_interceptor = "4.9.3"
+    }
+
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.15'
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.4.2' apply false
+    id 'com.android.library' version '7.4.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.10' apply false
+    id("com.google.dagger.hilt.android") version "2.44" apply false
+}
