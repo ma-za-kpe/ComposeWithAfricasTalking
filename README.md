@@ -10,6 +10,9 @@ jetpack compose way.
 
 ## Installation
 1. Clone the project
-2. Run `./tools/setup.sh` or ``` bash tools/setup.sh ```
+2. Cd in the project
+3. Run `./tools/setup.sh` or `bash tools/setup.sh`
+4. Build and run the project
+
 
 

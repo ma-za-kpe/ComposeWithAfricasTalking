@@ -30,9 +30,9 @@ fun ATComposeApp() {
             SnackbarHost(
                 hostState = appState.snackbarHostState,
                 modifier = Modifier.padding(8.dp),
-                snackbar = { snackbarData ->
+                snackbar = { snackBarData ->
                     Snackbar(
-                        snackbarData,
+                        snackBarData,
                         contentColor = MaterialTheme.colors.onPrimary
                     )
                 }
