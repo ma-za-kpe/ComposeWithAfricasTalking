@@ -6,13 +6,10 @@ jetpack compose way.
 
 | #Light Mode    | #2 Dark Mode   |
 | :---: | :---: |
-| ![Screenshot_20230326_111940](https://user-images.githubusercontent.com/28810111/227763949-30d5482b-9cf3-4810-a99e-eac64f0bf139.png)   | ![Screenshot_20230326_111911](https://user-images.githubusercontent.com/28810111/227763956-c8f45005-8901-4436-98f4-f71ba8d45de0.png)   |
+| ![Screenshot_20230326_173918](https://user-images.githubusercontent.com/28810111/227786216-c562c549-3b6f-468c-89df-40f1481fcd6b.png)   | ![Screenshot_20230326_174015](https://user-images.githubusercontent.com/28810111/227786209-ba4c105c-a907-4346-865e-d783982279fe.png)   |
 
 ## Installation
 1. Clone the project
 2. Cd in the project
 3. Run `./tools/setup.sh` or `bash tools/setup.sh`
 4. Build and run the project
-
-
-
