@@ -45,7 +45,7 @@ fun OtherScreen(
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
 
-    // TODO: remove repetition // optimize this shit ``
+    // TODO: remove repetition // optimize this shit
     ConstraintLayout(
         modifier = Modifier
             .fillMaxWidth()
