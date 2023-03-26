@@ -8,6 +8,8 @@ jetpack compose way.
 | :---: | :---: |
 | ![Screenshot_20230326_111940](https://user-images.githubusercontent.com/28810111/227763949-30d5482b-9cf3-4810-a99e-eac64f0bf139.png)   | ![Screenshot_20230326_111911](https://user-images.githubusercontent.com/28810111/227763956-c8f45005-8901-4436-98f4-f71ba8d45de0.png)   |
 
-
+## Installation
+1. Clone the project
+2. Run `./tools/setup.sh` or ``` bash tools/setup.sh ```
 
 
