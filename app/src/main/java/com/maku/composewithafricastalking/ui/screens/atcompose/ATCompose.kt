@@ -19,6 +19,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -28,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.maku.composewithafricastalking.R
 import com.maku.composewithafricastalking.ui.data.tabRowItems
 import kotlinx.coroutines.launch
 
@@ -131,7 +133,9 @@ fun ATComposeScreen(
         }
         item {
             Text(
-                text = "History",
+                text = stringResource(
+                    id = R.string.history,
+                ),
                 modifier = Modifier
                     .padding(15.dp, 0.dp, 15.dp, 0.dp),
                 fontSize = 24.sp,

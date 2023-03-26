@@ -25,7 +25,6 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.composewithafricastalking.R
 import com.maku.composewithafricastalking.ui.data.uiState.ForSelfAirtimeUiState
-
 @Composable
 fun BuyForSelfScreen(
     viewModel: SelfViewModel = hiltViewModel(),
@@ -36,7 +35,6 @@ fun BuyForSelfScreen(
         viewModel::onMyAmountChange,
     )
 }
-
 @Composable
 fun SelfScreen(
     forSelfAirtimeUiState: ForSelfAirtimeUiState,
@@ -59,7 +57,7 @@ fun SelfScreen(
                 end.linkTo(parent.end, 16.dp)
                 width = Dimension.matchParent
             },
-            text = "Enter Amount",
+            text =  stringResource(id = R.string.enter_amount) ,
             fontSize = 24.sp,
             fontWeight = FontWeight.W700,
             textAlign = TextAlign.Start,
@@ -75,7 +73,10 @@ fun SelfScreen(
             label = {
                 Text(
                     if (forSelfAirtimeUiState.error)
-                        stringResource(id = R.string.amount_error) else "Amount"
+                        stringResource(id = R.string.amount_error)
+                    else {
+                        stringResource(id = R.string.amount)
+                    }
                 )
             },
             isError = forSelfAirtimeUiState.error,
@@ -83,15 +84,9 @@ fun SelfScreen(
             keyboardActions = KeyboardActions(
                 onDone = {
                     keyboardController?.hide()
-                    // do something here
-                    // isValidEmail(uiState.email)
                 }
             ),
             modifier = Modifier
-                .semantics {
-                    // Provide localized description of the error
-                    //  if (isError) error(errorMessage)
-                }
                 .constrainAs(phoneInput) {
                     top.linkTo(title.bottom, 16.dp)
                     start.linkTo(parent.start, 16.dp)

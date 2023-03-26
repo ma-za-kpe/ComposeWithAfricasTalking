@@ -9,7 +9,6 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -26,7 +25,6 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.composewithafricastalking.R
 import com.maku.composewithafricastalking.ui.data.uiState.ForAnotherAirtimeUiState
-
 @Composable
 fun BuyForOtherScreen(
     viewModel: OtherViewModel = hiltViewModel()
@@ -38,7 +36,6 @@ fun BuyForOtherScreen(
         viewModel::onAnotherPhoneChange,
     )
 }
-
 @Composable
 fun OtherScreen(
     forAnotherUiState: ForAnotherAirtimeUiState,
@@ -62,7 +59,7 @@ fun OtherScreen(
                 end.linkTo(parent.end, 16.dp)
                 width = Dimension.fillToConstraints
             },
-            text = "Enter Phone & Amount",
+            text = stringResource(id = R.string.enter_amount_phone),
             fontSize = 24.sp,
             fontWeight = FontWeight.W700,
             textAlign = TextAlign.Start,
@@ -80,7 +77,7 @@ fun OtherScreen(
                     if (forAnotherUiState.error) {
                         stringResource(id = R.string.phone_error)
                     } else {
-                        "e.g 0740000000"
+                        stringResource(id = R.string.phone_eg)
                     }
                 )
             },
@@ -89,15 +86,9 @@ fun OtherScreen(
             keyboardActions = KeyboardActions(
                 onDone = {
                     keyboardController?.hide()
-                    // do something here
-                    // isValidEmail(uiState.email)
                 }
             ),
             modifier = Modifier
-                .semantics {
-                    // Provide localized description of the error
-                    //  if (isError) error(errorMessage)
-                }
                 .constrainAs(phoneInput) {
                     top.linkTo(title.bottom, 16.dp)
                     start.linkTo(parent.start, 16.dp)
@@ -117,7 +108,9 @@ fun OtherScreen(
                     if (forAnotherUiState.error) {
                         stringResource(id = R.string.amount_error)
                     } else {
-                        "Amount"
+                        stringResource(
+                            id = R.string.amount,
+                        )
                     }
                 )
             },
@@ -126,15 +119,9 @@ fun OtherScreen(
             keyboardActions = KeyboardActions(
                 onDone = {
                     keyboardController?.hide()
-                    // do something here
-                    // isValidEmail(uiState.email)
                 }
             ),
             modifier = Modifier
-                .semantics {
-                    // Provide localized description of the error
-                    //  if (isError) error(errorMessage)
-                }
                 .constrainAs(amountInput) {
                     top.linkTo(phoneInput.bottom, 16.dp)
                     start.linkTo(parent.start, 16.dp)
@@ -167,7 +154,6 @@ fun OtherScreen(
         }
     }
 }
-
 @Composable
 @Preview(showBackground = true)
 fun BuyForOtherScreenPreview() {

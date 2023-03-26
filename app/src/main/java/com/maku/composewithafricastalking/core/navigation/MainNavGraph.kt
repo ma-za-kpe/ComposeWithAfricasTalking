@@ -8,6 +8,7 @@ import com.maku.composewithafricastalking.ui.state.AppState
 
 @Composable
 fun MainNavGraph(
+    appState: AppState,
     startDestination: String,
     modifier: Modifier = Modifier
 ) {
