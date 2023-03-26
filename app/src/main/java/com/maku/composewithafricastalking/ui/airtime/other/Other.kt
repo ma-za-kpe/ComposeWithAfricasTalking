@@ -4,16 +4,17 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.TextFieldColors
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -24,7 +25,9 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.composewithafricastalking.R
+import com.maku.composewithafricastalking.core.ui.DevicePreviews
 import com.maku.composewithafricastalking.ui.data.uiState.ForAnotherAirtimeUiState
+
 @Composable
 fun BuyForOtherScreen(
     viewModel: OtherViewModel = hiltViewModel()
@@ -53,13 +56,14 @@ fun OtherScreen(
         val (title, phoneInput, amountInput, btn) = createRefs()
 
         Text(
+            text = stringResource(id = R.string.enter_amount_phone),
             modifier = Modifier.constrainAs(title) {
                 top.linkTo(parent.top, 16.dp)
                 start.linkTo(parent.start, 16.dp)
                 end.linkTo(parent.end, 16.dp)
                 width = Dimension.fillToConstraints
             },
-            text = stringResource(id = R.string.enter_amount_phone),
+            color = MaterialTheme.colorScheme.onSurface,
             fontSize = 24.sp,
             fontWeight = FontWeight.W700,
             textAlign = TextAlign.Start,
@@ -94,7 +98,10 @@ fun OtherScreen(
                     start.linkTo(parent.start, 16.dp)
                     end.linkTo(parent.end, 16.dp)
                     width = Dimension.fillToConstraints
-                }
+                },
+            colors = TextFieldDefaults.textFieldColors(
+                // to set colors, look into the colors.kt file
+            )
         )
 
         OutlinedTextField(
@@ -127,7 +134,10 @@ fun OtherScreen(
                     start.linkTo(parent.start, 16.dp)
                     end.linkTo(parent.end, 16.dp)
                     width = Dimension.fillToConstraints
-                }
+                },
+            colors = TextFieldDefaults.textFieldColors(
+                // to set colors, look into the colors.kt file
+            )
         )
 
         Button(
@@ -142,20 +152,20 @@ fun OtherScreen(
                     width = Dimension.wrapContent
                 },
             colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.secondary
+                containerColor = MaterialTheme.colorScheme.primaryContainer
             )
         ) {
             Text(
                 stringResource(
                     id = R.string.buy_airtime,
                 ),
-                color = MaterialTheme.colorScheme.onSecondary
+                color = MaterialTheme.colorScheme.onPrimaryContainer
             )
         }
     }
 }
 @Composable
-@Preview(showBackground = true)
+@DevicePreviews
 fun BuyForOtherScreenPreview() {
     OtherScreen(
         forAnotherUiState = ForAnotherAirtimeUiState(),

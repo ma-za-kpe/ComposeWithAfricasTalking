@@ -9,6 +9,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -92,7 +93,10 @@ fun SelfScreen(
                     start.linkTo(parent.start, 16.dp)
                     end.linkTo(parent.end, 16.dp)
                     width = Dimension.fillToConstraints
-                }
+                },
+            colors = TextFieldDefaults.textFieldColors(
+                // to set colors, look into the colors.kt file
+            )
         )
 
         Button(
@@ -107,14 +111,14 @@ fun SelfScreen(
                     width = Dimension.wrapContent
                 },
             colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.secondary
+                containerColor = MaterialTheme.colorScheme.primaryContainer
             )
         ) {
             Text(
                 stringResource(
                     id = R.string.buy_airtime,
                 ),
-                color = MaterialTheme.colorScheme.onSecondary
+                color = MaterialTheme.colorScheme.onPrimaryContainer
             )
         }
     }
