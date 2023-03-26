@@ -1,6 +1,7 @@
 package com.maku.composewithafricastalking.ui.screens.atcompose
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,6 +15,7 @@ import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -30,20 +32,15 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.maku.composewithafricastalking.R
+import com.maku.composewithafricastalking.core.ui.DevicePreviews
 import com.maku.composewithafricastalking.ui.data.tabRowItems
+import com.maku.composewithafricastalking.ui.screens.bottombar.AtComposeNavigationDefaults
 import kotlinx.coroutines.launch
 
 @Composable
 fun ATComposeRoute(
     modifier: Modifier = Modifier
 ) {
-    val systemUiController = rememberSystemUiController()
-    SideEffect {
-        systemUiController.setStatusBarColor(
-            color = Color.Transparent,
-            darkIcons = true
-        )
-    }
     ATComposeScreen(modifier)
 }
 
@@ -86,21 +83,21 @@ fun ATComposeScreen(
                 tabRowItems.forEachIndexed { index, item ->
                     val selected = pagerState.currentPage == index
                     val backgroundColor = if(selected) {
-                        MaterialTheme.colorScheme.secondaryContainer
+                        MaterialTheme.colorScheme.primaryContainer
                     } else {
                         MaterialTheme.colorScheme.surface
-                    }
-
-                    val textColor = if(selected) {
-                        MaterialTheme.colorScheme.onSecondaryContainer
-                    } else {
-                        MaterialTheme.colorScheme.onSurface
                     }
 
                     val clip = if(selected) {
                         RoundedCornerShape(30.dp)
                     } else {
                         RoundedCornerShape(0.dp)
+                    }
+
+                    val textColor = if (selected) {
+                        AtComposeNavigationDefaults.navigationSelectedItemColor()
+                    } else {
+                        AtComposeNavigationDefaults.navigationContentColor()
                     }
 
                     Tab(
@@ -119,7 +116,7 @@ fun ATComposeScreen(
                                 overflow = TextOverflow.Ellipsis
                             )
                         },
-                        selectedContentColor = MaterialTheme.colorScheme.onSecondary,
+                        selectedContentColor = MaterialTheme.colorScheme.primaryContainer,
                         unselectedContentColor = MaterialTheme.colorScheme.secondary
                     )
                 }
@@ -156,7 +153,7 @@ fun ATComposeScreen(
 }
 
 @Composable
-@Preview(showBackground = true)
+@DevicePreviews
 fun ATComposeScreenPreview() {
     ATComposeScreen()
 }

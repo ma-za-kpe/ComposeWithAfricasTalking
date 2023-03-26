@@ -1,8 +1,8 @@
 # ComposeWithAfricasTalking
 - A simple project demonstrating the use of some of the Africa's talking API's in a 
 jetpack compose way. 
-- We also heavily utilise the androiddocumentation, code labs, youtube videos, open source projects like nowinandroid, and so on. 
-- This project is under heavy construction, and will remain as so, for the foreseen future.
+- We also heavily utilise the android documentation, code labs, youtube videos, open source projects like nowinandroid, and so on. 
+- This project is under heavy construction, and will remain as so, for the foreseen future. This project is built with scalability and expansion in mind.
 
 | #Light Mode    | #2 Dark Mode   |
 | :---: | :---: |
