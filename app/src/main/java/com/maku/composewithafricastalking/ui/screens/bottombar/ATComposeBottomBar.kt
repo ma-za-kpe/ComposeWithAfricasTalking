@@ -1,6 +1,7 @@
 package com.maku.composewithafricastalking.ui.screens.bottombar
 
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -90,7 +91,13 @@ fun RowScope.ATComposeNavigationBarItem(
         enabled = enabled,
         label = label,
         alwaysShowLabel = alwaysShowLabel,
-        colors = NavigationBarItemDefaults.colors() // TODO: set custom colors here
+        colors = NavigationBarItemDefaults.colors(
+            selectedIconColor = AtComposeNavigationDefaults.navigationSelectedItemColor(),
+            unselectedIconColor = AtComposeNavigationDefaults.navigationContentColor(),
+            selectedTextColor = AtComposeNavigationDefaults.navigationSelectedItemColor(),
+            unselectedTextColor = AtComposeNavigationDefaults.navigationContentColor(),
+            indicatorColor = AtComposeNavigationDefaults.navigationIndicatorColor(),
+        )
     )
 }
 
@@ -105,4 +112,15 @@ fun ATComposeBottomBarPreview() {
             currentDestination = appState.currentDestination
         )
     }
+}
+
+object AtComposeNavigationDefaults {
+    @Composable
+    fun navigationContentColor() = MaterialTheme.colorScheme.onSurfaceVariant
+
+    @Composable
+    fun navigationSelectedItemColor() = MaterialTheme.colorScheme.onPrimaryContainer
+
+    @Composable
+    fun navigationIndicatorColor() = MaterialTheme.colorScheme.primaryContainer
 }
