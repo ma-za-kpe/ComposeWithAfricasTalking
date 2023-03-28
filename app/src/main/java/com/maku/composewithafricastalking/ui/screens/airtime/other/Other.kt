@@ -1,4 +1,4 @@
-package com.maku.composewithafricastalking.ui.airtime.other
+package com.maku.composewithafricastalking.ui.screens.airtime.other
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,7 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -25,6 +24,7 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.composewithafricastalking.R
 import com.maku.composewithafricastalking.ui.data.uiState.ForAnotherAirtimeUiState
+
 @Composable
 fun BuyForOtherScreen(
     viewModel: OtherViewModel = hiltViewModel()

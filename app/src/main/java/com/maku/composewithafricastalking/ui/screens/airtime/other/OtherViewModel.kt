@@ -1,4 +1,4 @@
-package com.maku.composewithafricastalking.ui.airtime.other
+package com.maku.composewithafricastalking.ui.screens.airtime.other
 
 import androidx.compose.runtime.mutableStateOf
 import com.maku.composewithafricastalking.R
