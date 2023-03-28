@@ -1,4 +1,4 @@
-package com.maku.composewithafricastalking.ui.airtime.other
+package com.maku.composewithafricastalking.ui.screens.airtime.other
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
