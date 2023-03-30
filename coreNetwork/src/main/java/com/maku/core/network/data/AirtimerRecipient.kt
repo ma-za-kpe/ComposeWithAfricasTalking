@@ -1,4 +1,4 @@
-package com.maku.composewithafricastalking.core.data.entities.at
+package com.maku.core.network.data
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

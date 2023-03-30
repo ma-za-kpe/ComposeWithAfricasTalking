@@ -1,6 +1,6 @@
 package com.maku.composewithafricastalking.core.data.repo
 
-import com.maku.composewithafricastalking.core.data.entities.at.SendAirtime
+import com.maku.core.network.data.SendAirtime
 import retrofit2.Response
 
 interface RemoteDataSource {

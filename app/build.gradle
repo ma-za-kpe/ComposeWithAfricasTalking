@@ -57,6 +57,8 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':coreNetwork')
+
     def composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)

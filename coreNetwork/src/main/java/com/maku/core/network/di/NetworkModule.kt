@@ -1,8 +1,8 @@
-package com.maku.composewithafricastalking.core.data.network.di
+package com.maku.core.network.di
 
-import com.maku.composewithafricastalking.core.data.network.client.ATApiClient
-import com.maku.composewithafricastalking.core.data.network.client.LoggingInterceptor
-import com.maku.composewithafricastalking.core.util.AppConstants.BASE_URL
+import com.maku.core.network.client.ATApiClient
+import com.maku.core.network.client.LoggingInterceptor
+import com.maku.core.network.util.AppConstants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

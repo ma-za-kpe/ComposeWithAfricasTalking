@@ -1,6 +1,6 @@
-package com.maku.composewithafricastalking.core.data.network.client
+package com.maku.core.network.client
 
-import com.maku.composewithafricastalking.core.data.entities.at.SendAirtime
+import com.maku.core.network.data.SendAirtime
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
