@@ -1,4 +1,4 @@
-package com.maku.composewithafricastalking.core.data.repo
+package com.maku.core.data.repo
 
 class ATComposeRepositoryImpl : ATComposeRepository {
     override val remote: RemoteDataSource

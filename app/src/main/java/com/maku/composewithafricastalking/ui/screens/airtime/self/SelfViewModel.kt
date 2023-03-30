@@ -2,7 +2,7 @@ package com.maku.composewithafricastalking.ui.screens.airtime.self
 
 import androidx.compose.runtime.mutableStateOf
 import com.maku.composewithafricastalking.R
-import com.maku.composewithafricastalking.core.data.repo.ATComposeRepository
+import com.maku.core.data.repo.ATComposeRepository
 import com.maku.composewithafricastalking.core.util.isValidAmount
 import com.maku.composewithafricastalking.core.util.snackbar.SnackbarManager
 import com.maku.composewithafricastalking.ui.data.uiState.ForSelfAirtimeUiState
