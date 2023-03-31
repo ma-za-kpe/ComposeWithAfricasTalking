@@ -57,4 +57,12 @@ dependencies {
     implementation(libs.accompanist.pager.indicators)
     implementation(libs.accompanist.system.ui.controller)
 
+    // Instrumented tests: jUnit rules and runners
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.runner)
+
+    // Local tests: jUnit, coroutines, Android runner
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+
 }

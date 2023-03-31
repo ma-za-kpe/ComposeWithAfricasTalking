@@ -41,4 +41,8 @@ dependencies {
 
     // logging
     implementation(libs.timber)
+
+    // Local tests: jUnit, coroutines, Android runner
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
 }

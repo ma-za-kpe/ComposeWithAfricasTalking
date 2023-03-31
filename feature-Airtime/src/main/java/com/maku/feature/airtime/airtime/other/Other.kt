@@ -1,4 +1,4 @@
-package com.maku.featureairtime.airtime.other
+package com.maku.feature.airtime.airtime.other
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,6 +23,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.core.ui.R
+import com.maku.featureairtime.airtime.other.OtherViewModel
 import com.maku.featureairtime.data.uiState.ForAnotherAirtimeUiState
 
 @Composable
