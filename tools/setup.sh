@@ -18,6 +18,16 @@ mkdir -p "${GIT_DIR}/hooks/"
 cp "${GIT_ROOT}/tools/pre-push" "${GIT_DIR}/hooks/pre-push" \
   && chmod +x "${GIT_DIR}/hooks/pre-push"
 
+# Create a folder where all the set up files will be downloaded
+mkdir -p ../atcompose-tools
+cd ../atcompose-tools
+
+# Download ktlint
+bash ../Atcompose/tools/ktlint_download.sh
+
+# Download checkstyle
+bash ../Atcompose/tools/checkstyle_download.sh
+
 cat <<-EOF
 Checking the following settings helps avoid miscellaneous issues:
   * Settings -> Editor -> General -> Remove trailing spaces on: Modified lines
