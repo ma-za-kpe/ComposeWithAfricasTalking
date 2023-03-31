@@ -23,10 +23,10 @@ mkdir -p ../atcompose-tools
 cd ../atcompose-tools
 
 # Download ktlint
-bash ../Atcompose/tools/ktlint_download.sh
+bash ../ComposeWithAfricasTalking/tools/ktlint_download.sh
 
 # Download checkstyle
-bash ../Atcompose/tools/checkstyle_download.sh
+bash ../ComposeWithAfricasTalking/tools/checkstyle_download.sh
 
 cat <<-EOF
 Checking the following settings helps avoid miscellaneous issues:
