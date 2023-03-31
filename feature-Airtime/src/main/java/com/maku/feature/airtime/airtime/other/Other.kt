@@ -36,6 +36,7 @@ fun BuyForOtherScreen(
         viewModel::onAnotherPhoneChange
     )
 }
+
 @Composable
 fun OtherScreen(
     forAnotherUiState: ForAnotherAirtimeUiState,
@@ -113,7 +114,7 @@ fun OtherScreen(
                         stringResource(id = com.maku.core.ui.R.string.amount_error)
                     } else {
                         stringResource(
-                            id = R.string.amount,
+                            id = R.string.amount
                         )
                     }
                 )
@@ -154,13 +155,14 @@ fun OtherScreen(
         ) {
             Text(
                 stringResource(
-                    id = R.string.buy_airtime,
+                    id = R.string.buy_airtime
                 ),
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
         }
     }
 }
+
 @Composable
 @com.maku.core.ui.previews.DevicePreviews
 fun BuyForOtherScreenPreview() {

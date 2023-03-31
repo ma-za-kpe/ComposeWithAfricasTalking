@@ -36,6 +36,7 @@ fun BuyForSelfScreen(
         viewModel::onMyAmountChange
     )
 }
+
 @Composable
 fun SelfScreen(
     forSelfAirtimeUiState: ForSelfAirtimeUiState,
@@ -75,8 +76,7 @@ fun SelfScreen(
                 Text(
                     if (forSelfAirtimeUiState.error) {
                         stringResource(id = R.string.amount_error)
-                    }
-                    else {
+                    } else {
                         stringResource(id = R.string.amount)
                     }
                 )
