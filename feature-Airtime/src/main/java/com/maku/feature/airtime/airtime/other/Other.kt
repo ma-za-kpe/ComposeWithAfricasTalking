@@ -23,7 +23,6 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.core.ui.R
-import com.maku.featureairtime.airtime.other.OtherViewModel
 import com.maku.feature.airtime.data.uiState.ForAnotherAirtimeUiState
 
 @Composable

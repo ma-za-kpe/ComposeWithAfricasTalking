@@ -58,7 +58,7 @@ fun SelfScreen(
                 end.linkTo(parent.end, 16.dp)
                 width = Dimension.matchParent
             },
-            text =  stringResource(id = R.string.enter_amount) ,
+            text = stringResource(id = R.string.enter_amount),
             fontSize = 24.sp,
             fontWeight = FontWeight.W700,
             textAlign = TextAlign.Start,
@@ -73,8 +73,9 @@ fun SelfScreen(
             singleLine = true,
             label = {
                 Text(
-                    if (forSelfAirtimeUiState.error)
+                    if (forSelfAirtimeUiState.error) {
                         stringResource(id = R.string.amount_error)
+                    }
                     else {
                         stringResource(id = R.string.amount)
                     }
@@ -116,7 +117,7 @@ fun SelfScreen(
         ) {
             Text(
                 stringResource(
-                    id = R.string.buy_airtime,
+                    id = R.string.buy_airtime
                 ),
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )

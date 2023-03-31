@@ -29,7 +29,7 @@ class SelfViewModel @Inject constructor() : MainViewModel() {
                 error = true
             )
             // TODO: use the error messages that come from the material library instead
-           SnackbarManager.showMessage(R.string.amount_error)
+            SnackbarManager.showMessage(R.string.amount_error)
             return
         }
 
