@@ -20,9 +20,6 @@ cd ../atcompose-tools
 # Download ktlint
 bash ../ComposeWithAfricasTalking/tools/ktlint_download.sh
 
-# Download checkstyle
-bash ../ComposeWithAfricasTalking/tools/checkstyle_download.sh
-
 cat <<-EOF
 Checking the following settings helps avoid miscellaneous issues:
   * Settings -> Editor -> General -> Remove trailing spaces on: Modified lines

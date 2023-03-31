@@ -17,14 +17,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.core.ui.R
-import com.maku.featureairtime.airtime.other.OtherViewModel
-import com.maku.featureairtime.data.uiState.ForAnotherAirtimeUiState
+import com.maku.feature.airtime.data.uiState.ForAnotherAirtimeUiState
 
 @Composable
 fun BuyForOtherScreen(
@@ -34,9 +34,10 @@ fun BuyForOtherScreen(
         viewModel.forAnotherUiState.value,
         viewModel::onBuyAirtimeForAnotherClick,
         viewModel::onAnotherAmountChange,
-        viewModel::onAnotherPhoneChange,
+        viewModel::onAnotherPhoneChange
     )
 }
+
 @Composable
 fun OtherScreen(
     forAnotherUiState: ForAnotherAirtimeUiState,
@@ -114,7 +115,7 @@ fun OtherScreen(
                         stringResource(id = com.maku.core.ui.R.string.amount_error)
                     } else {
                         stringResource(
-                            id = R.string.amount,
+                            id = R.string.amount
                         )
                     }
                 )
@@ -155,20 +156,27 @@ fun OtherScreen(
         ) {
             Text(
                 stringResource(
-                    id = R.string.buy_airtime,
+                    id = R.string.buy_airtime
                 ),
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
         }
     }
 }
+
 @Composable
-@com.maku.core.ui.previews.DevicePreviews
+@Preview(
+    name = "phone",
+    uiMode = 32,
+    showSystemUi = true,
+    showBackground = false,
+    device = "spec:shape=Normal,width=360,height=640,unit=dp,dpi=480"
+)
 fun BuyForOtherScreenPreview() {
     OtherScreen(
         forAnotherUiState = ForAnotherAirtimeUiState(),
         onBuyAirtimeForAnotherClick = {},
         onAnotherAmountChange = {},
-        onAnotherPhoneChange = {},
+        onAnotherPhoneChange = {}
     )
 }

@@ -28,6 +28,7 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
 import com.maku.composewithafricastalking.ui.bottombar.AtComposeNavigationDefaults
 import com.maku.core.ui.R
+import com.maku.feature.airtime.data.tabRowItems
 import kotlinx.coroutines.launch
 
 @Composable
@@ -63,25 +64,25 @@ fun ATComposeScreen(
 //                        Modifier.pagerTabIndicatorOffset(
 //                                pagerState, tabPositions
 //                            ),
-                        color =  Color.Transparent
+                        color = Color.Transparent
                     )
                 },
                 divider = {
                     Divider(
                         thickness = 0.dp,
-                        color =  Color.Transparent
+                        color = Color.Transparent
                     )
                 }
             ) {
-                com.maku.featureairtime.data.tabRowItems.forEachIndexed { index, item ->
+                tabRowItems.forEachIndexed { index, item ->
                     val selected = pagerState.currentPage == index
-                    val backgroundColor = if(selected) {
+                    val backgroundColor = if (selected) {
                         MaterialTheme.colorScheme.primaryContainer
                     } else {
                         MaterialTheme.colorScheme.surface
                     }
 
-                    val clip = if(selected) {
+                    val clip = if (selected) {
                         RoundedCornerShape(30.dp)
                     } else {
                         RoundedCornerShape(0.dp)
@@ -115,16 +116,16 @@ fun ATComposeScreen(
                 }
             }
             HorizontalPager(
-                count = com.maku.featureairtime.data.tabRowItems.size,
+                count = tabRowItems.size,
                 state = pagerState
             ) { page ->
-                com.maku.featureairtime.data.tabRowItems[page].screen()
+                tabRowItems[page].screen()
             }
         }
         item {
             Text(
                 text = stringResource(
-                    id = R.string.history,
+                    id = R.string.history
                 ),
                 modifier = Modifier
                     .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -150,4 +151,3 @@ fun ATComposeScreen(
 fun ATComposeScreenPreview() {
     ATComposeScreen()
 }
-

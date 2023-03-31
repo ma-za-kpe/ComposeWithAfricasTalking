@@ -18,8 +18,11 @@ sealed class SnackbarMessage {
 
         fun Throwable.toSnackbarMessage(): SnackbarMessage {
             val message = this.message.orEmpty()
-            return if (message.isNotBlank()) StringSnackbar(message)
-            else ResourceSnackbar(R.string.generic_error)
+            return if (message.isNotBlank()) {
+                StringSnackbar(message)
+            } else {
+                ResourceSnackbar(R.string.generic_error)
+            }
         }
     }
 }

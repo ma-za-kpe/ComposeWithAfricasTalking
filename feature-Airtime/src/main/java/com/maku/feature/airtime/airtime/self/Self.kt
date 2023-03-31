@@ -1,4 +1,4 @@
-package com.maku.featureairtime.airtime.self
+package com.maku.feature.airtime.airtime.self
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -25,20 +24,22 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.core.ui.R
-import com.maku.featureairtime.data.uiState.ForSelfAirtimeUiState
+import com.maku.feature.airtime.data.uiState.ForSelfAirtimeUiState
+
 @Composable
 fun BuyForSelfScreen(
-    viewModel: SelfViewModel = hiltViewModel(),
+    viewModel: SelfViewModel = hiltViewModel()
 ) {
     SelfScreen(
         viewModel.uiState.value,
         viewModel::onBuyAirtimeClick,
-        viewModel::onMyAmountChange,
+        viewModel::onMyAmountChange
     )
 }
+
 @Composable
 fun SelfScreen(
-    forSelfAirtimeUiState: com.maku.featureairtime.data.uiState.ForSelfAirtimeUiState,
+    forSelfAirtimeUiState: ForSelfAirtimeUiState,
     onBuyAirtimeClick: () -> Unit,
     onMyAmountChange: (
         String
@@ -58,7 +59,7 @@ fun SelfScreen(
                 end.linkTo(parent.end, 16.dp)
                 width = Dimension.matchParent
             },
-            text =  stringResource(id = R.string.enter_amount) ,
+            text = stringResource(id = R.string.enter_amount),
             fontSize = 24.sp,
             fontWeight = FontWeight.W700,
             textAlign = TextAlign.Start,
@@ -73,9 +74,9 @@ fun SelfScreen(
             singleLine = true,
             label = {
                 Text(
-                    if (forSelfAirtimeUiState.error)
+                    if (forSelfAirtimeUiState.error) {
                         stringResource(id = R.string.amount_error)
-                    else {
+                    } else {
                         stringResource(id = R.string.amount)
                     }
                 )
@@ -116,7 +117,7 @@ fun SelfScreen(
         ) {
             Text(
                 stringResource(
-                    id = R.string.buy_airtime,
+                    id = R.string.buy_airtime
                 ),
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
@@ -130,6 +131,6 @@ fun SelfScreenPreview() {
     SelfScreen(
         forSelfAirtimeUiState = ForSelfAirtimeUiState(),
         onBuyAirtimeClick = {},
-        onMyAmountChange = {},
+        onMyAmountChange = {}
     )
 }

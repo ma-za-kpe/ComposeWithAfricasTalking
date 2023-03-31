@@ -70,7 +70,7 @@ class AppState(
     val resources: Resources,
     coroutineScope: CoroutineScope,
     val systemUiController: SystemUiController,
-    val snackbarHostState: SnackbarHostState,
+    val snackbarHostState: SnackbarHostState
 ) {
 
     init {

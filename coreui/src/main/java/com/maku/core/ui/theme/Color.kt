@@ -3,7 +3,6 @@ package com.maku.core.ui.theme
 import androidx.compose.ui.graphics.Color
 
 // generate colors for your own theme from here: https://m3.material.io/theme-builder#/custom
-
 val md_theme_light_primary = Color(0xFF8D4F00)
 val md_theme_light_onPrimary = Color(0xFFFFFFFF)
 val md_theme_light_primaryContainer = Color(0xFFFFDCC0)
@@ -65,6 +64,4 @@ val md_theme_dark_shadow = Color(0xFF000000)
 val md_theme_dark_surfaceTint = Color(0xFFFFB876)
 val md_theme_dark_outlineVariant = Color(0xFF51443A)
 val md_theme_dark_scrim = Color(0xFF000000)
-
-
 val seed = Color(0xFFFC9206)
