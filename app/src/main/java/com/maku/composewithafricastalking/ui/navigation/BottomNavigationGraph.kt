@@ -27,7 +27,7 @@ fun NavGraphBuilder.BottomNavigationGraph(
         )
 
         InfoScreen(
-            startDestination = infoNavigationRoute,
+            startDestination = infoNavigationRoute
         )
     }
 }

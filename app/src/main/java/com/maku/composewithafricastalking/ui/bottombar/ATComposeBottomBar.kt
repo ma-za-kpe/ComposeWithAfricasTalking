@@ -104,8 +104,9 @@ fun RowScope.ATComposeNavigationBarItem(
 @Composable
 fun ATComposeBottomBarPreview() {
     com.maku.core.ui.theme.ComposeWithAfricasTalkingTheme {
+        // TODO: refactor this out of here
         val appState =
-            com.maku.composewithafricastalking.ui.state.rememberAppState() // TODO: refactor this out of here
+            com.maku.composewithafricastalking.ui.state.rememberAppState()
         ATComposeBottomBar(
             destinations = appState.topLevelDestinations,
             onNavigateToDestination = {},
