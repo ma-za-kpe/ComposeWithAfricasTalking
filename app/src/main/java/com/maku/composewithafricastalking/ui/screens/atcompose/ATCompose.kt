@@ -63,13 +63,13 @@ fun ATComposeScreen(
 //                        Modifier.pagerTabIndicatorOffset(
 //                                pagerState, tabPositions
 //                            ),
-                        color =  Color.Transparent
+                        color = Color.Transparent
                     )
                 },
                 divider = {
                     Divider(
                         thickness = 0.dp,
-                        color =  Color.Transparent
+                        color = Color.Transparent
                     )
                 }
             ) {
@@ -81,7 +81,7 @@ fun ATComposeScreen(
                         MaterialTheme.colorScheme.surface
                     }
 
-                    val clip = if(selected) {
+                    val clip = if (selected) {
                         RoundedCornerShape(30.dp)
                     } else {
                         RoundedCornerShape(0.dp)
@@ -124,7 +124,7 @@ fun ATComposeScreen(
         item {
             Text(
                 text = stringResource(
-                    id = R.string.history,
+                    id = R.string.history
                 ),
                 modifier = Modifier
                     .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -150,4 +150,3 @@ fun ATComposeScreen(
 fun ATComposeScreenPreview() {
     ATComposeScreen()
 }
-

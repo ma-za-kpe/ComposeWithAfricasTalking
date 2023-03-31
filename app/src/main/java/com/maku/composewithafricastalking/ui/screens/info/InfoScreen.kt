@@ -10,6 +10,4 @@ fun InfoScreen() {
 
 @Composable
 @Preview(showBackground = true)
-fun InfoScreenPreview() {
-    // ATComposeScreen()
-}
+fun InfoScreenPreview() {}
