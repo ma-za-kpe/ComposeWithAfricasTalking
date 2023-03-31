@@ -75,7 +75,7 @@ fun ATComposeScreen(
             ) {
                 com.maku.featureairtime.data.tabRowItems.forEachIndexed { index, item ->
                     val selected = pagerState.currentPage == index
-                    val backgroundColor = if(selected) {
+                    val backgroundColor = if (selected) {
                         MaterialTheme.colorScheme.primaryContainer
                     } else {
                         MaterialTheme.colorScheme.surface

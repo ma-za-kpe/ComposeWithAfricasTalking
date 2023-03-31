@@ -11,7 +11,7 @@ enum class TopLevelDestination(
     val selectedIcon: ImageVector,
     val unselectedIcon: ImageVector,
     val iconTextId: Int,
-    val titleTextId: Int,
+    val titleTextId: Int
 ) {
     AIRTIME(
         selectedIcon = Default.PlayArrow,

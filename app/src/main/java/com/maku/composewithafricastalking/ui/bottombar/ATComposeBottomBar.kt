@@ -95,7 +95,7 @@ fun RowScope.ATComposeNavigationBarItem(
             unselectedIconColor = AtComposeNavigationDefaults.navigationContentColor(),
             selectedTextColor = AtComposeNavigationDefaults.navigationSelectedItemColor(),
             unselectedTextColor = AtComposeNavigationDefaults.navigationContentColor(),
-            indicatorColor = AtComposeNavigationDefaults.navigationIndicatorColor(),
+            indicatorColor = AtComposeNavigationDefaults.navigationIndicatorColor()
         )
     )
 }
