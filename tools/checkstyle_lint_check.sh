@@ -9,9 +9,9 @@ github_actions_path=$1
 jar_file_path=$?
 
 if [ $# -eq 0 ]; then
-    jar_file_path="../atcompose-tools/checkstyle-8.37-all.jar"
+    jar_file_path="../atcompose-tools/checkstyle-10.7.0-all.jar"
 else
-    jar_file_path="$github_actions_path/atcompose-tools/checkstyle-8.37-all.jar"
+    jar_file_path="$github_actions_path/atcompose-tools/checkstyle-10.7.0-all.jar"
 fi
 
 lint_results=$(java -jar $jar_file_path -c /google_checks.xml app/src/ 2>&1)
