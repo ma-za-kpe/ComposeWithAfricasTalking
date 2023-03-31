@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.maku.composewithafricastalking.ui.bottombar.ATComposeBottomBar
-import com.maku.core.ui.navigation.MainNavGraph
+import com.maku.composewithafricastalking.ui.navigation.MainNavGraph
 import com.maku.composewithafricastalking.ui.navigation.bottomNavigationRoute
 import com.maku.composewithafricastalking.ui.state.rememberAppState
 

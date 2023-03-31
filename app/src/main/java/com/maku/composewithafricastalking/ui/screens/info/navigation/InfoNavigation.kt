@@ -14,7 +14,7 @@ fun NavController.navigateToInfo(navOptions: NavOptions? = null) {
 }
 
 fun NavGraphBuilder.InfoScreen(
-    startDestination: String,
+    startDestination: String
 ) {
     navigation(
         route = infoGraphNavigationDestination,
