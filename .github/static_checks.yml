@@ -1,0 +1,60 @@
+name: Static Checks
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - develop
+
+jobs:
+  check_base_branch:
+    name: Check base branch
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: "Branch is not based on develop or release branch"
+        if: ${{ github.base_ref != 'main' &&  github.base_ref != 'develop' && !startsWith(github.base_ref, 'release-') }}
+        run: |
+          echo "Current base branch: $BASE_BRANCH"
+          echo "Note: this check is expected to fail for chained PRs so that they can't accidentally be merged. PRs should only ever be merged directly into develop or a release branch."
+          exit 1
+        env:
+          BASE_BRANCH: ${{ github.base_ref }}
+
+      - name: "Branch verified as based on develop/release branch"
+        if: ${{ github.base_ref == 'develop' || startsWith(github.base_ref, 'release-') }}
+        run: |
+          echo "Branch is correctly branched off of valid base branch to merge PRs into: $BASE_BRANCH"
+        env:
+          BASE_BRANCH: ${{ github.base_ref }}
+
+  linters:
+    name: Lint Tests
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create atcompose android tools directory
+        run: mkdir -p $HOME/atcompose-tools
+
+      # Java 11 is specifically needed for Checkstyle.
+      - name: Set up JDK 1.11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+
+      - name: Download Checkstyle
+        run: |
+          cd $HOME/atcompose-tools
+          bash /home/runner/work/ComposeWithAfricasTalking/tools/checkstyle_download.sh
+      - name: Download Ktlint
+        run: |
+          cd $HOME/atcompose-tools
+          bash /home/runner/work/ComposeWithAfricasTalking/ComposeWithAfricasTalking/tools/ktlint_download.sh
+      - name: Java lint check
+        run: |
+          bash /home/runner/work/ComposeWithAfricasTalking/ComposeWithAfricasTalking/tools/checkstyle_lint_check.sh $HOME
+      - name: Kotlin lint check
+        run: |
+          bash /home/runner/work/ComposeWithAfricasTalking/ComposeWithAfricasTalking/tools/ktlint_lint_check.sh $HOME
