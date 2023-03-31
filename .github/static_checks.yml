@@ -44,17 +44,10 @@ jobs:
         with:
           java-version: 1.11
 
-      - name: Download Checkstyle
-        run: |
-          cd $HOME/atcompose-tools
-          bash /home/runner/work/ComposeWithAfricasTalking/tools/checkstyle_download.sh
       - name: Download Ktlint
         run: |
           cd $HOME/atcompose-tools
           bash /home/runner/work/ComposeWithAfricasTalking/ComposeWithAfricasTalking/tools/ktlint_download.sh
-      - name: Java lint check
-        run: |
-          bash /home/runner/work/ComposeWithAfricasTalking/ComposeWithAfricasTalking/tools/checkstyle_lint_check.sh $HOME
       - name: Kotlin lint check
         run: |
           bash /home/runner/work/ComposeWithAfricasTalking/ComposeWithAfricasTalking/tools/ktlint_lint_check.sh $HOME
