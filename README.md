@@ -44,7 +44,7 @@ Please follow these steps to set up ComposeWithAfricasTalking on your local mach
     - Install Git Bash Command Line
     - Open Git Bash Command Line.
     - Navigate to atcompose/ComposeWithAfricasTalking.
-    - Run the script bash scripts/setup.sh.
+    - Run the script `bash tools/setup.sh`.
     - Download the google_checks.xml(https://github.com/checkstyle/checkstyle/blob/14005e371803bd52dff429904b354dc3e72638c0/src/main/resources/google_checks.xml) file. To do this, you can simply right-click on the Raw button and click on Save Link as.
     - Copy this file to the directory where Git is installed (usually C:/Program Files/Git/).
 

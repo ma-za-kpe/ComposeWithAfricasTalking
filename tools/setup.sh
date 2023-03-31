@@ -1,22 +1,17 @@
 #!/bin/bash
 
-RED='\033[0;1;31m'
-NC='\033[0m' # No Color
+# INSTRUCTIONS:
+# This script will move the pre-push hook from script folder to
+# the .git/hooks folder
+#
+# Run the script from the atcompose root folder:
+#
+#   bash tools/setup.sh
+#
+# NOTE: this script should be run once after the initial codebase setup
 
-GIT_DIR=$(git rev-parse --git-dir 2> /dev/null)
-GIT_ROOT=$(git rev-parse --show-toplevel 2> /dev/null)
-
-echo "Installing git commit-message hook"
-echo
-curl -sSLo "${GIT_DIR}/hooks/commit-msg" \
-    "https://gerrit-review.googlesource.com/tools/hooks/commit-msg" \
-  && chmod +x "${GIT_DIR}/hooks/commit-msg"
-
-echo "Installing git pre-push hook"
-echo
-mkdir -p "${GIT_DIR}/hooks/"
-cp "${GIT_ROOT}/tools/pre-push" "${GIT_DIR}/hooks/pre-push" \
-  && chmod +x "${GIT_DIR}/hooks/pre-push"
+# Move file from script folder to .git/hooks folder
+cp tools/pre-push.sh .git/hooks/pre-push
 
 # Create a folder where all the set up files will be downloaded
 mkdir -p ../atcompose-tools
