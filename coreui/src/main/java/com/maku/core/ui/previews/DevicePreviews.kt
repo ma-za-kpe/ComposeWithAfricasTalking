@@ -21,5 +21,4 @@ import androidx.compose.ui.tooling.preview.Preview
     showBackground = false,
     device = "spec:shape=Normal,width=360,height=640,unit=dp,dpi=480"
 )
-
 annotation class DevicePreviews
