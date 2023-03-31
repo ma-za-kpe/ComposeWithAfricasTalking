@@ -1,15 +1,17 @@
-package com.maku.featureairtime.airtime.self
+package com.maku.feature.airtime.airtime.self
 
 import androidx.compose.runtime.mutableStateOf
 import com.maku.core.ui.R
 import com.maku.core.ui.util.isValidAmount
+import com.maku.core.ui.util.snackbar.SnackbarManager
 import com.maku.core.ui.vm.MainViewModel
+import com.maku.feature.airtime.data.uiState.ForSelfAirtimeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class SelfViewModel @Inject constructor() : MainViewModel() {
-    var uiState = mutableStateOf(com.maku.featureairtime.data.uiState.ForSelfAirtimeUiState())
+    var uiState = mutableStateOf(ForSelfAirtimeUiState())
         private set
 
     private val myAmount
@@ -22,13 +24,17 @@ class SelfViewModel @Inject constructor() : MainViewModel() {
     fun onBuyAirtimeClick() {
         uiState.value = uiState.value.copy(loading = true)
         if (!myAmount.isValidAmount()) {
-            uiState.value = uiState.value.copy(loading = false, error = true)
-            com.maku.core.ui.util.snackbar.SnackbarManager.showMessage(R.string.amount_error) // TODO: use the error messages that come from the material library instead
+            uiState.value = uiState.value.copy(
+                loading = false,
+                error = true
+            )
+            // TODO: use the error messages that come from the material library instead
+           SnackbarManager.showMessage(R.string.amount_error)
             return
         }
 
         launchCatching {
-            com.maku.core.ui.util.snackbar.SnackbarManager.showMessage("Coming very soon")
+            SnackbarManager.showMessage("Coming very soon")
         }
     }
 }

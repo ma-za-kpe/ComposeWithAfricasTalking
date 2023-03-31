@@ -5,7 +5,7 @@ import com.maku.core.ui.util.isValidAmount
 import com.maku.core.ui.util.isValidPhone
 import com.maku.core.ui.vm.MainViewModel
 import com.maku.core.ui.R
-import com.maku.featureairtime.data.uiState.ForAnotherAirtimeUiState
+import com.maku.feature.airtime.data.uiState.ForAnotherAirtimeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

@@ -1,7 +1,7 @@
 package com.maku.core.ui.previews
 
 import androidx.compose.ui.tooling.preview.Preview
-
+// TODO: fix dark mode
 /**
  * Multi-preview annotation that represents various device sizes. Add this annotation to a composable
  * to render various devices.

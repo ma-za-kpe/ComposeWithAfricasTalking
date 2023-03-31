@@ -24,7 +24,7 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.core.ui.R
 import com.maku.featureairtime.airtime.other.OtherViewModel
-import com.maku.featureairtime.data.uiState.ForAnotherAirtimeUiState
+import com.maku.feature.airtime.data.uiState.ForAnotherAirtimeUiState
 
 @Composable
 fun BuyForOtherScreen(
@@ -34,7 +34,7 @@ fun BuyForOtherScreen(
         viewModel.forAnotherUiState.value,
         viewModel::onBuyAirtimeForAnotherClick,
         viewModel::onAnotherAmountChange,
-        viewModel::onAnotherPhoneChange,
+        viewModel::onAnotherPhoneChange
     )
 }
 @Composable
@@ -169,6 +169,6 @@ fun BuyForOtherScreenPreview() {
         forAnotherUiState = ForAnotherAirtimeUiState(),
         onBuyAirtimeForAnotherClick = {},
         onAnotherAmountChange = {},
-        onAnotherPhoneChange = {},
+        onAnotherPhoneChange = {}
     )
 }
