@@ -1,7 +1,7 @@
 package com.maku.composewithafricastalking.ui.state
 
 import android.content.res.Resources
-import androidx.compose.material.SnackbarHostState
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.Stable
@@ -17,13 +17,13 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.maku.composewithafricastalking.core.navigation.TopLevelDestination
-import com.maku.composewithafricastalking.core.util.snackbar.SnackbarManager
-import com.maku.composewithafricastalking.core.util.snackbar.SnackbarMessage.Companion.toMessage
-import com.maku.composewithafricastalking.ui.screens.atcompose.navigation.atcomposeNavigationRoute
-import com.maku.composewithafricastalking.ui.screens.atcompose.navigation.navigateToATCompose
+import com.maku.composewithafricastalking.ui.navigation.TopLevelDestination
+import com.maku.composewithafricastalking.ui.navigation.atcomposeNavigationRoute
+import com.maku.composewithafricastalking.ui.navigation.navigateToATCompose
 import com.maku.composewithafricastalking.ui.screens.info.navigation.infoNavigationRoute
 import com.maku.composewithafricastalking.ui.screens.info.navigation.navigateToInfo
+import com.maku.core.ui.util.snackbar.SnackbarManager
+import com.maku.core.ui.util.snackbar.SnackbarMessage.Companion.toMessage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch

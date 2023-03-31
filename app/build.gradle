@@ -44,9 +44,6 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.2"
-    }
-    composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
     }
     packagingOptions {
@@ -58,6 +55,8 @@ android {
 
 dependencies {
     implementation project(path: ':coreNetwork')
+    implementation project(path: ':coreui')
+    implementation project(path: ':feature-Airtime')
 
     def composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
