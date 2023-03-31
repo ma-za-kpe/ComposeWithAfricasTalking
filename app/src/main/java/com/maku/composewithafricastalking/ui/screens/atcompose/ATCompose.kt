@@ -22,6 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.pager.HorizontalPager
@@ -147,7 +148,13 @@ fun ATComposeScreen(
 }
 
 @Composable
-@com.maku.core.ui.previews.DevicePreviews
+@Preview(
+    name = "phone",
+    uiMode = 32,
+    showSystemUi = true,
+    showBackground = false,
+    device = "spec:shape=Normal,width=360,height=640,unit=dp,dpi=480"
+)
 fun ATComposeScreenPreview() {
     ATComposeScreen()
 }
