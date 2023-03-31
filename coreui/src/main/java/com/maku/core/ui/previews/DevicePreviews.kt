@@ -6,8 +6,7 @@ import androidx.compose.ui.tooling.preview.Preview
  * Multi-preview annotation that represents various device sizes. Add this annotation to a composable
  * to render various devices.
  */
-@Preview
-(
+@Preview(
     name = "phone",
     uiMode = 16,
     showSystemUi = true,
@@ -15,8 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
     device = "spec:shape=Normal,width=360,height=640,unit=dp,dpi=480"
 )
 
-@Preview
-(
+@Preview(
     name = "phone",
     uiMode = 32,
     showSystemUi = true,
