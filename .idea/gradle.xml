@@ -11,6 +11,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/coreNetwork" />
+            <option value="$PROJECT_DIR$/coredata" />
+            <option value="$PROJECT_DIR$/coreui" />
+            <option value="$PROJECT_DIR$/feature-Airtime" />
           </set>
         </option>
       </GradleProjectSettings>

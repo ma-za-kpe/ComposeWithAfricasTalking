@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ComposeWithAfricasTalking</string>
+    <string name="generic_error">An error occurred</string>
+    <string name="airtime">AT - Compose</string>
+    <string name="info">Info</string>
+    <string name="phone_error">Please insert a valid phone.</string>
+    <string name="amount_error">Please insert a valid amount.</string>
+    <string name="buy_airtime">BUY AIRTIME</string>
+    <string name="amount">Amount</string>
+    <string name="phone_eg">e.g 0740000000</string>
+    <string name="enter_amount_phone">Enter Phone &amp; Amount</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="history">History</string>
+</resources>

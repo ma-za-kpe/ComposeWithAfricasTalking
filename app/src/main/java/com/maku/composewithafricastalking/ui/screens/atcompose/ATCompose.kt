@@ -1,7 +1,6 @@
 package com.maku.composewithafricastalking.ui.screens.atcompose
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,8 +14,6 @@ import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -25,16 +22,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.maku.composewithafricastalking.R
-import com.maku.composewithafricastalking.core.ui.DevicePreviews
-import com.maku.composewithafricastalking.ui.data.tabRowItems
-import com.maku.composewithafricastalking.ui.screens.bottombar.AtComposeNavigationDefaults
+import com.maku.composewithafricastalking.ui.bottombar.AtComposeNavigationDefaults
+import com.maku.core.ui.R
 import kotlinx.coroutines.launch
 
 @Composable
@@ -80,7 +73,7 @@ fun ATComposeScreen(
                     )
                 }
             ) {
-                tabRowItems.forEachIndexed { index, item ->
+                com.maku.featureairtime.data.tabRowItems.forEachIndexed { index, item ->
                     val selected = pagerState.currentPage == index
                     val backgroundColor = if(selected) {
                         MaterialTheme.colorScheme.primaryContainer
@@ -122,10 +115,10 @@ fun ATComposeScreen(
                 }
             }
             HorizontalPager(
-                count = tabRowItems.size,
+                count = com.maku.featureairtime.data.tabRowItems.size,
                 state = pagerState
             ) { page ->
-                tabRowItems[page].screen()
+                com.maku.featureairtime.data.tabRowItems[page].screen()
             }
         }
         item {
@@ -153,7 +146,7 @@ fun ATComposeScreen(
 }
 
 @Composable
-@DevicePreviews
+@com.maku.core.ui.previews.DevicePreviews
 fun ATComposeScreenPreview() {
     ATComposeScreen()
 }
