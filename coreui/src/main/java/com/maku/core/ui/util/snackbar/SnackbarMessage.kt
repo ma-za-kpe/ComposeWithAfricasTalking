@@ -20,8 +20,7 @@ sealed class SnackbarMessage {
             val message = this.message.orEmpty()
             return if (message.isNotBlank()) {
                 StringSnackbar(message)
-            }
-            else {
+            } else {
                 ResourceSnackbar(R.string.generic_error)
             }
         }
