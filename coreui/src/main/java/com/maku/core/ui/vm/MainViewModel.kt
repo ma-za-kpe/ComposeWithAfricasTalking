@@ -8,6 +8,9 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
+/**
+ * Add more log services here, e.g firebase crashlytics, etc
+ * */
 open class MainViewModel() : ViewModel() {
     fun launchCatching(
         snackbar: Boolean = true,

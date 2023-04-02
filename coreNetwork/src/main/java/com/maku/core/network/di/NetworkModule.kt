@@ -1,8 +1,9 @@
 package com.maku.core.network.di
 
-import com.maku.core.network.client.ATApiClient
-import com.maku.core.network.client.LoggingInterceptor
-import com.maku.core.network.util.AppConstants.BASE_URL
+import com.maku.core.network.api.ATComposeApi
+import com.maku.core.network.api.LoggingInterceptor
+import com.maku.core.network.api.NetworkStatusInterceptor
+import com.maku.core.network.util.ApiConstants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,9 +23,11 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideHttpClient(
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        networkStatusInterceptor: NetworkStatusInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(networkStatusInterceptor)
             .addInterceptor(
                 Interceptor { chain ->
                     val ongoing: Request.Builder = chain.request().newBuilder()
@@ -76,7 +79,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit): ATApiClient {
-        return retrofit.create(ATApiClient::class.java)
+    fun provideApiService(retrofit: Retrofit): ATComposeApi {
+        return retrofit.create(ATComposeApi::class.java)
     }
 }
