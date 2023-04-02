@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 
 class RemoteDataSourceImpl @Inject constructor(
     private val api: ATComposeApi
-): RemoteDataSource {
+) : RemoteDataSource {
     override suspend fun sendAirtime(
         apiKey: String,
         name: String,
