@@ -1,4 +1,4 @@
-package com.maku.core.network.data
+package com.maku.core.network.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

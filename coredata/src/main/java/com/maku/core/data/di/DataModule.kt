@@ -2,8 +2,8 @@ package com.maku.core.data.di
 
 import com.maku.core.data.repo.ATComposeRepository
 import com.maku.core.data.repo.ATComposeRepositoryImpl
-import com.maku.core.data.repo.RemoteDataSource
-import com.maku.core.data.repo.RemoteDataSourceImpl
+import com.maku.core.network.repo.RemoteDataSource
+import com.maku.core.network.repo.RemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
