@@ -1,4 +1,4 @@
-package com.maku.core.network.client
+package com.maku.core.network.api
 
 import javax.inject.Inject
 import okhttp3.logging.HttpLoggingInterceptor

@@ -11,4 +11,6 @@
     <string name="enter_amount_phone">Enter Phone &amp; Amount</string>
     <string name="enter_amount">Enter Amount</string>
     <string name="history">History</string>
+    <string name="generic_network_error"> No network available :(. Please try again.</string>
+
 </resources>
