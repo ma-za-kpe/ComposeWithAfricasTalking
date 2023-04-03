@@ -61,6 +61,9 @@ logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", ver
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
+[bundles]
+room = ["room-ktx", "room-compiler", "room-runtime"]
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
