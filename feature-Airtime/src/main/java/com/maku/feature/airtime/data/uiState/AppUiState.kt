@@ -10,5 +10,6 @@ data class ForAnotherAirtimeUiState(
     val amount: String = "",
     val phone: String = "",
     val error: Boolean = false,
-    val loading: Boolean = false
+    val loading: Boolean = false,
 )
+

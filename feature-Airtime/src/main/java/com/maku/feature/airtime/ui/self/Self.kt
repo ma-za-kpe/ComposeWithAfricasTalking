@@ -1,4 +1,4 @@
-package com.maku.feature.airtime.airtime.self
+package com.maku.feature.airtime.ui.self
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
