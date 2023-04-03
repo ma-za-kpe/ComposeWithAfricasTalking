@@ -1,6 +1,5 @@
 package com.maku.feature.airtime.ui.other
 
-import com.maku.feature.airtime.domain.usecase.SendAirtime as SendAirtimeUsecase
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import com.google.gson.Gson
@@ -10,6 +9,7 @@ import com.maku.core.ui.util.isValidAmount
 import com.maku.core.ui.util.isValidPhone
 import com.maku.core.ui.vm.MainViewModel
 import com.maku.feature.airtime.data.uiState.ForAnotherAirtimeUiState
+import com.maku.feature.airtime.domain.usecase.SendAirtime as SendAirtimeUsecase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

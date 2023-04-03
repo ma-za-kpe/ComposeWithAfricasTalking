@@ -12,4 +12,4 @@ import dagger.hilt.components.SingletonComponent
 abstract class DataModule {
     @Binds
     abstract fun bindAtComposeRepository(repository: ATComposeRepositoryImpl): ATComposeRepository
-    }
+}
