@@ -9,9 +9,3 @@ sealed class ApiResult<T>( // generic
     class Error<T>(message: String?, data: T? = null) : ApiResult<T>(data, message)
     class Loading<T> : ApiResult<T>()
 }
-
-
-//sealed class ApiResult<out R> {
-//    data class Success<out T>(val data: T) : ApiResult<T>()
-//    data class Error(val exception: Exception) : ApiResult<Nothing>()
-//}
