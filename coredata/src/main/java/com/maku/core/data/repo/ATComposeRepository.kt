@@ -1,8 +1,13 @@
 package com.maku.core.data.repo
 
-import com.maku.core.network.repo.RemoteDataSource
+import com.maku.core.network.model.SendAirtime
+import retrofit2.Response
 
 // Abstractions for the different data sources, or services used in your app
 interface ATComposeRepository {
-    val remote: RemoteDataSource
+    suspend fun sendAirtime(
+        apiKey: String,
+        name: String,
+        recipients: String
+    ): Response<SendAirtime>
 }

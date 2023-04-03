@@ -1,4 +1,4 @@
-package com.maku.feature.airtime.airtime.self
+package com.maku.feature.airtime.ui.self
 
 import androidx.compose.runtime.mutableStateOf
 import com.maku.core.ui.R

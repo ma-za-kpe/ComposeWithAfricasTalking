@@ -32,7 +32,8 @@ fun ATComposeApp() {
                 snackbar = { snackBarData ->
                     Snackbar(
                         snackBarData,
-                        contentColor = MaterialTheme.colors.onPrimary
+                        contentColor = MaterialTheme.colors.onSurface,
+                        containerColor = MaterialTheme.colors.surface
                     )
                 }
             )
