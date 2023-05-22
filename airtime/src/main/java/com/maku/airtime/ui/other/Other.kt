@@ -327,9 +327,11 @@ fun TelecomDropDownMenu(
 fun BuyForOtherScreenPreview() {
     OtherScreen(
         forAnotherUiState = ForAnotherAirtimeUiState(),
-        onBuyAirtimeForAnotherClick = { _, _ -> {
+        onBuyAirtimeForAnotherClick = { _, _ ->
+            {
 
-        }},
+            }
+        },
         onAnotherDialCodeChange = {},
         onAnotherAirtimeLimitChange = {},
         onAnotherPhoneChange = {},
