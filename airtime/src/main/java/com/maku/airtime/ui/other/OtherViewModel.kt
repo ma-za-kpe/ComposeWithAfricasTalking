@@ -46,7 +46,7 @@ class OtherViewModel @Inject constructor(
     }
 
     val userAmountHasLocalError by derivedStateOf {
-        isAmountCorrect(amount)
+        isAmountCorrect(amount, getLimit())
     }
 
     // TODO: find out how long phone numbers are in each country and validate accordingly
@@ -57,20 +57,6 @@ class OtherViewModel @Inject constructor(
             return Pair(true, "phone must only be numbers")
         } else if (phoneValue.length < 10) {
             return Pair(true, "phone must be more that 10 characters")
-        }
-        return Pair(false, "")
-    }
-
-    private fun isAmountCorrect(amountValue: String): Pair<Boolean, String> {
-        if (amountValue.isEmpty()) {
-            return Pair(true, "amount cannot be empty")
-        } else if (!amountValue.isDigitsOnly()) {
-            return Pair(true, "amount must only be numbers")
-        } else if (
-            amountValue.toInt() !in
-            (getLimit()[0].trim().toDouble().toInt() + 1)..getLimit()[1].trim().toInt()
-        ) {
-            return Pair(true, "amount must be between ${getLimit()}")
         }
         return Pair(false, "")
     }
@@ -175,6 +161,7 @@ class OtherViewModel @Inject constructor(
         }
     }
 
+    // TODO: move this logic to a global string extention file
     private fun extractCode(dial_code: String) = dial_code.substringAfterLast(" ")
 
     private fun getAirtimeList(newValue: String): List<AirtimeLimitEntity> {
@@ -184,6 +171,7 @@ class OtherViewModel @Inject constructor(
         return countryList?.airtimeLimits ?: emptyList()
     }
 
+    // TODO: move this logic to a global string extention file
     private fun isValidPhoneFormat(
         phone: String,
         dial_code: String

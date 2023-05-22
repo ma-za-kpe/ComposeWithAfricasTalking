@@ -1,5 +1,7 @@
 package com.maku.airtime.ui.self
 
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import com.maku.airtime.data.uiState.ForSelfAirtimeUiState
 import com.maku.core.ui.vm.MainViewModel
@@ -20,19 +22,22 @@ class SelfViewModel @Inject constructor() : MainViewModel() {
         uiState.value = uiState.value.copy(amount = newValue)
     }
 
-    fun onBuyAirtimeClick() {
-        uiState.value = uiState.value.copy(loading = true)
-//        if (!myAmount.isValidAmount()) {
-//            uiState.value = uiState.value.copy(
-//                loading = false,
-//                error = true
-//            )
-//            // TODO: use the error messages that come from the material library instead
-//            SnackbarManager.showMessage(R.string.amount_error)
-//            return
-//        }
+    val myAmountHasLocalError by derivedStateOf {
+        isAmountCorrect(
+            myAmount,
+            listOf() // set this after implementing the auth
+        )
+    }
 
+    fun onBuyAirtimeClick(amountError: Boolean,) {
+        if (amountError) {
+            SnackbarManager.showMessage(
+                SnackbarMessage.StringSnackbar("Please fix the issues in the form.")
+            )
+            return
+        }
         launchCatching {
+            uiState.value = uiState.value.copy(loading = true)
             SnackbarManager.showMessage(SnackbarMessage.StringSnackbar("Coming very soon"))
         }
     }

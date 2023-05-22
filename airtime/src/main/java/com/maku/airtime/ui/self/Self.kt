@@ -33,17 +33,17 @@ fun BuyForSelfScreen(
     SelfScreen(
         viewModel.uiState.value,
         viewModel::onBuyAirtimeClick,
-        viewModel::onMyAmountChange
+        viewModel::onMyAmountChange,
+        viewModel.myAmountHasLocalError
     )
 }
 
 @Composable
 fun SelfScreen(
     forSelfAirtimeUiState: ForSelfAirtimeUiState,
-    onBuyAirtimeClick: () -> Unit,
-    onMyAmountChange: (
-        String
-    ) -> Unit
+    onBuyAirtimeClick: (Boolean) -> Unit,
+    onMyAmountChange: (String) -> Unit,
+    myAmountHasLocalError: Pair<Boolean, String>
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     ConstraintLayout(
@@ -73,15 +73,8 @@ fun SelfScreen(
             },
             singleLine = true,
             label = {
-                Text(
-                    if (forSelfAirtimeUiState.error) {
-                        stringResource(id = R.string.amount_error)
-                    } else {
-                        stringResource(id = R.string.amount)
-                    }
-                )
+                Text("Amount") // TODO: set limit
             },
-            isError = forSelfAirtimeUiState.error,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             keyboardActions = KeyboardActions(
                 onDone = {
@@ -95,14 +88,20 @@ fun SelfScreen(
                     end.linkTo(parent.end, 16.dp)
                     width = Dimension.fillToConstraints
                 },
-            colors = TextFieldDefaults.textFieldColors(
-                // to set colors, look into the colors.kt file
-            )
+            supportingText = {
+                if (myAmountHasLocalError.first) {
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = myAmountHasLocalError.second,
+                        color = MaterialTheme.colorScheme.error
+                    )
+                }
+            }
         )
 
         Button(
             onClick = {
-                onBuyAirtimeClick()
+                onBuyAirtimeClick(myAmountHasLocalError.first)
             },
             shape = RoundedCornerShape(18.dp),
             modifier = Modifier
@@ -131,6 +130,7 @@ fun SelfScreenPreview() {
     SelfScreen(
         forSelfAirtimeUiState = ForSelfAirtimeUiState(),
         onBuyAirtimeClick = {},
-        onMyAmountChange = {}
+        onMyAmountChange = {},
+        myAmountHasLocalError = Pair(true, "Please insert correct amount")
     )
 }
