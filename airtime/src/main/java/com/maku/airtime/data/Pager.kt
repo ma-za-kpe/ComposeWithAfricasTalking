@@ -2,7 +2,7 @@ package com.maku.airtime.data
 
 import androidx.compose.runtime.Composable
 import com.maku.airtime.ui.other.BuyForOtherScreen
-import com.maku.feature.airtime.ui.self.BuyForSelfScreen
+import com.maku.airtime.ui.self.BuyForSelfScreen
 
 val tabRowItems = listOf(
     TabRowItem(

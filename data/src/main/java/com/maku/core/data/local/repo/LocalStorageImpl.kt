@@ -78,7 +78,6 @@ class LocalStorageImpl @Inject constructor(
         return atDao.getAllCountries()
     }
 
-
     private fun countryCode(): List<CountryListItem> {
         val jsonString = """  replace with json string   """.trimIndent()
         return Gson().fromJson(

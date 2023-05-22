@@ -1,4 +1,4 @@
-package com.maku.feature.airtime.ui.self
+package com.maku.airtime.ui.self
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,9 +23,8 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.maku.core.ui.R
 import com.maku.airtime.data.uiState.ForSelfAirtimeUiState
-import com.maku.airtime.ui.self.SelfViewModel
+import com.maku.core.ui.R
 
 @Composable
 fun BuyForSelfScreen(

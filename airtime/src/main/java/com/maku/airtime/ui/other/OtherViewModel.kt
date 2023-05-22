@@ -1,5 +1,6 @@
 package com.maku.airtime.ui.other
 
+import com.maku.core.network.usecases.SendAirtime as SendAirtimeUsecase
 import android.util.Log
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
@@ -10,7 +11,6 @@ import com.google.gson.Gson
 import com.maku.airtime.data.uiState.ForAnotherAirtimeUiState
 import com.maku.core.network.model.AirtimeLimitEntity
 import com.maku.core.network.usecases.GetCountries
-import com.maku.core.network.usecases.SendAirtime as SendAirtimeUsecase
 import com.maku.core.state.NetworkResult
 import com.maku.core.ui.vm.MainViewModel
 import com.maku.core.util.snackbar.SnackbarManager

@@ -15,5 +15,5 @@ import com.maku.core.data.local.model.CountryListItem
 )
 @TypeConverters(AtComposeConvertor::class)
 abstract class ComposeWithATDatabase : RoomDatabase() {
-  abstract fun airtimeDao(): AirTimeDao
+    abstract fun airtimeDao(): AirTimeDao
 }
