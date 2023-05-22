@@ -67,8 +67,8 @@ class OtherViewModel @Inject constructor(
         } else if (!amountValue.isDigitsOnly()) {
             return Pair(true, "amount must only be numbers")
         } else if (
-            amountValue.toInt() !in (getLimit()[0].trim().toDouble().toInt() + 1)
-            ..getLimit()[1].trim().toInt()
+            amountValue.toInt() !in (
+                    getLimit()[0].trim().toDouble().toInt() + 1)..getLimit()[1].trim().toInt()
         ) {
             return Pair(true, "amount must be between ${getLimit()}")
         }
@@ -87,9 +87,11 @@ class OtherViewModel @Inject constructor(
         forAnotherUiState.value = forAnotherUiState.value.copy(
             dial_code = newValue,
             airtimeLimitList = getAirtimeList(newValue),
-            airtimeLimit = getAirtimeList(newValue)?.get(0)?.name + " (" +
-                    getAirtimeList(newValue)?.get(0)?.lower + " - " +
-                    getAirtimeList(newValue)?.get(0)?.upper + ")"
+            airtimeLimit = getAirtimeList(
+                newValue
+            )?.get(0)?.name + " (" + getAirtimeList(newValue)?.get(0)?.lower + " - " + getAirtimeList(
+                newValue
+            )?.get(0)?.upper + ")"
         )
     }
 

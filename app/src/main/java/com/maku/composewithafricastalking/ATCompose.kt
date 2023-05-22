@@ -1,7 +1,7 @@
 package com.maku.composewithafricastalking
 
-import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
+import android.app.Application
 
 @HiltAndroidApp
 class ATCompose : Application()
