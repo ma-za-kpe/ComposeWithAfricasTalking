@@ -136,15 +136,13 @@ fun OtherScreen(
             OutlinedTextField(
                 value = forAnotherUiState.amount ?: "0",
                 onValueChange = {
-                     onAnotherAmountChange(it)
+                    onAnotherAmountChange(it)
                 },
                 modifier = Modifier
                     .fillMaxWidth(),
                 singleLine = true,
                 label = {
-                    Text(
-                      "Amount ($limit)"
-                    )
+                    Text("Amount ($limit)")
                 },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 keyboardActions = KeyboardActions(

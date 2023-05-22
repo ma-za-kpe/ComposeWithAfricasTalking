@@ -11,5 +11,6 @@ interface ATComposeRepository {
         name: String,
         recipients: String
     ): NetworkResult<SendAirtime>
-    suspend fun getAllCountries():  Flow<List<AirtimeEntity>>
+
+    suspend fun getAllCountries(): Flow<List<AirtimeEntity>>
 }

@@ -1,6 +1,5 @@
 package com.maku.airtime.ui.other
 
-import com.maku.core.network.usecases.SendAirtime as SendAirtimeUsecase
 import android.util.Log
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
@@ -11,6 +10,7 @@ import com.google.gson.Gson
 import com.maku.airtime.data.uiState.ForAnotherAirtimeUiState
 import com.maku.core.network.model.AirtimeLimitEntity
 import com.maku.core.network.usecases.GetCountries
+import com.maku.core.network.usecases.SendAirtime as SendAirtimeUsecase
 import com.maku.core.state.NetworkResult
 import com.maku.core.ui.vm.MainViewModel
 import com.maku.core.util.snackbar.SnackbarManager
@@ -67,10 +67,8 @@ class OtherViewModel @Inject constructor(
         } else if (!amountValue.isDigitsOnly()) {
             return Pair(true, "amount must only be numbers")
         } else if (
-            amountValue.toInt() !in (
-                    getLimit()[0].trim().toDouble()
-                        .toInt() + 1
-                    )..getLimit()[1].trim().toInt()
+            amountValue.toInt() !in (getLimit()[0].trim().toDouble().toInt() + 1)
+            ..getLimit()[1].trim().toInt()
         ) {
             return Pair(true, "amount must be between ${getLimit()}")
         }
@@ -151,7 +149,7 @@ class OtherViewModel @Inject constructor(
                 list.add(recipient)
                 val json = Gson().toJson(list)
 
-                //TODO:secure these keys and logic for both sandbox and, for the different countries
+                // TODO:secure these keys and logic for both sandbox and,for the different countries
                 val sent = sendAirtime(
                     "fcb5afd02a20c9c640caa210ba458a81a96125ecff6668885283b4438b54de98",
                     "easyAirtime",
@@ -161,7 +159,9 @@ class OtherViewModel @Inject constructor(
                 when (sent) {
                     is NetworkResult.Success -> {
                         SnackbarManager.showMessage(
-                            SnackbarMessage.StringSnackbar("Success, Airtime sent to ${sent.data.numSent}")
+                            SnackbarMessage.StringSnackbar(
+                                "Success, Airtime sent to ${sent.data.numSent}"
+                            )
                         )
                         forAnotherUiState.value = forAnotherUiState.value.copy(loading = false)
                     }

@@ -6,8 +6,8 @@ import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 
 class GetCountries @Inject constructor(
-  private val atComposeRepository: ATComposeRepository
+    private val atComposeRepository: ATComposeRepository
 ) {
-  suspend operator fun invoke(): Flow<List<AirtimeEntity>> =
-    atComposeRepository.getAllCountries()
+    suspend operator fun invoke(): Flow<List<AirtimeEntity>> =
+        atComposeRepository.getAllCountries()
 }
