@@ -23,8 +23,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
-import com.maku.composewithafricastalking.ui.bottombar.AtComposeNavigationDefaults
 import com.maku.airtime.data.tabRowItems
+import com.maku.composewithafricastalking.ui.bottombar.AtComposeNavigationDefaults
 import kotlinx.coroutines.launch
 
 @Composable
