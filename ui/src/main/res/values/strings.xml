@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ComposeWithAfricasTalking</string>
+    <string name="generic_error">An error occurred</string>
+    <string name="airtime">AT - Compose</string>
+    <string name="info">Info</string>
+    <string name="phone_error">Please insert a valid phone.</string>
+    <string name="amount_error">Please insert a valid amount.</string>
+    <string name="dial_code_error">Please select country.</string>
+    <string name="telecom_error">Please select telecom.</string>
+    <string name="buy_airtime">BUY AIRTIME</string>
+    <string name="amount">Amount</string>
+    <string name="select_country">Select country</string>
+    <string name="select_telecom">Select Telecom</string>
+    <string name="phone_eg">Enter phone</string>
+    <string name="enter_amount_phone">Enter Phone &amp; Amount</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="history">History</string>
+    <string name="generic_network_error"> No network available :(. Please try again.</string>
+    <string name="coming_to_country_soon">This feature is coming to your country very soon :)</string>
+</resources>

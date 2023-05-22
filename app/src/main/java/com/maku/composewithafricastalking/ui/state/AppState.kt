@@ -22,8 +22,8 @@ import com.maku.composewithafricastalking.ui.navigation.atcomposeNavigationRoute
 import com.maku.composewithafricastalking.ui.navigation.navigateToATCompose
 import com.maku.composewithafricastalking.ui.screens.info.navigation.infoNavigationRoute
 import com.maku.composewithafricastalking.ui.screens.info.navigation.navigateToInfo
-import com.maku.core.ui.util.snackbar.SnackbarManager
-import com.maku.core.ui.util.snackbar.SnackbarMessage.Companion.toMessage
+import com.maku.core.util.snackbar.SnackbarManager
+import com.maku.core.util.snackbar.SnackbarMessage.Companion.toMessage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
@@ -97,16 +97,10 @@ class AppState(
 
     fun navigateToTopLevelDestination(topLevelDestination: TopLevelDestination) {
         val topLevelNavOptions = navOptions {
-            // Pop up to the start destination of the graph to
-            // avoid building up a large stack of destinations
-            // on the back stack as users select items
             popUpTo(navController.graph.findStartDestination().id) {
                 saveState = true
             }
-            // Avoid multiple copies of the same destination when
-            // reselecting the same item
             launchSingleTop = true
-            // Restore state when reselecting a previously selected item
             restoreState = true
         }
 
