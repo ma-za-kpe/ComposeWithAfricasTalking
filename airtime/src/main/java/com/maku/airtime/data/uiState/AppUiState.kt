@@ -1,6 +1,5 @@
 package com.maku.airtime.data.uiState
 
-import com.maku.core.data.local.model.AirtimeLimit
 import com.maku.core.network.model.AirtimeEntity
 import com.maku.core.network.model.AirtimeLimitEntity
 

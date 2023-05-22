@@ -29,7 +29,7 @@ class SelfViewModel @Inject constructor() : MainViewModel() {
         )
     }
 
-    fun onBuyAirtimeClick(amountError: Boolean,) {
+    fun onBuyAirtimeClick(amountError: Boolean) {
         if (amountError) {
             SnackbarManager.showMessage(
                 SnackbarMessage.StringSnackbar("Please fix the issues in the form.")
