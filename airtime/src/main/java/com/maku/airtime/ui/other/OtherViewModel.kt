@@ -89,9 +89,9 @@ class OtherViewModel @Inject constructor(
             airtimeLimitList = getAirtimeList(newValue),
             airtimeLimit = getAirtimeList(
                 newValue
-            )?.get(0)?.name + " (" + getAirtimeList(newValue)?.get(0)?.lower + " - " + getAirtimeList(
+            )[0].name + " (" + getAirtimeList(newValue)[0].lower + " - " + getAirtimeList(
                 newValue
-            )?.get(0)?.upper + ")"
+            )[0].upper + ")"
         )
     }
 
