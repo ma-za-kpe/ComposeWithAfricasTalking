@@ -54,9 +54,10 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':coreNetwork')
-    implementation project(path: ':coreui')
-    implementation project(path: ':feature-Airtime')
+    implementation project(path: ':core')
+    implementation project(path: ':domain')
+    implementation project(path: ':ui')
+    implementation project(path: ':airtime')
 
     def composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
@@ -100,9 +101,6 @@ dependencies {
     implementation(libs.accompanist.pager)
     implementation(libs.accompanist.pager.indicators)
     implementation(libs.accompanist.system.ui.controller)
-
-    // logging
-    implementation(libs.timber)
 
     // Arch Components
     implementation(libs.androidx.lifecycle.viewmodel.compose)

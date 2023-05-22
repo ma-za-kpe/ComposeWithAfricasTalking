@@ -14,7 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ComposeWithAfricasTalking"
 include ':app'
-include ':coreNetwork'
-include ':coredata'
-include ':coreui'
-include ':feature-Airtime'
+include ':domain'
+include ':data'
+include ':ui'
+include ':core'
+include ':airtime'
