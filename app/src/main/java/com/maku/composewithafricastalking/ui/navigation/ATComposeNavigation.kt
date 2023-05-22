@@ -1,4 +1,4 @@
-package com.maku.composewithafricastalking.ui.navigation
+package com.maku.composewithafricastalking.ui.screens.atcompose.navigation
 
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController

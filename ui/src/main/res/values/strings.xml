@@ -3,6 +3,7 @@
     <string name="generic_error">An error occurred</string>
     <string name="airtime">AT - Compose</string>
     <string name="info">Info</string>
+    <string name="senator">Senator</string>
     <string name="phone_error">Please insert a valid phone.</string>
     <string name="amount_error">Please insert a valid amount.</string>
     <string name="dial_code_error">Please select country.</string>

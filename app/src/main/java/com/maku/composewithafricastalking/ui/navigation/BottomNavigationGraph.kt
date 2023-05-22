@@ -3,8 +3,12 @@ package com.maku.composewithafricastalking.ui.navigation
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.navigation
+import com.maku.composewithafricastalking.ui.screens.atcompose.navigation.ATComposeScreen
+import com.maku.composewithafricastalking.ui.screens.atcompose.navigation.atcomposeNavigationRoute
 import com.maku.composewithafricastalking.ui.screens.info.navigation.InfoScreen
 import com.maku.composewithafricastalking.ui.screens.info.navigation.infoNavigationRoute
+import com.maku.composewithafricastalking.ui.screens.senator.navigation.SenatorScreen
+import com.maku.composewithafricastalking.ui.screens.senator.navigation.senatorNavigationRoute
 
 const val bottomNavigationRoute = "bottom_nav_route"
 
@@ -19,15 +23,15 @@ fun NavGraphBuilder.BottomNavigationGraph(
         ATComposeScreen(
             startDestination = atcomposeNavigationRoute,
             nestedGraphs = {
-//                AirtimeSuccess(
-//                    onBackClick = { appState.popUp() }
-//                )
             },
             modifier
         )
 
         InfoScreen(
             startDestination = infoNavigationRoute
+        )
+        SenatorScreen(
+            startDestination = senatorNavigationRoute
         )
     }
 }
