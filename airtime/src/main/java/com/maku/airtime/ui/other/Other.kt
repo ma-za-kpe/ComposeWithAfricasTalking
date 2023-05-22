@@ -59,11 +59,14 @@ fun OtherScreen(
     onAnotherPhoneChange: (String) -> Unit,
     onAnotherAmountChange: (String) -> Unit,
     userPhoneHasLocalError: Pair<Boolean, String>,
-    userAmountHasLocalError: Pair<Boolean, String>,
+    userAmountHasLocalError: Pair<Boolean, String>
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val limit: String = forAnotherUiState.airtimeLimit
-        .substring(forAnotherUiState.airtimeLimit.indexOf("(") + 1, forAnotherUiState.airtimeLimit.indexOf(")"))
+        .substring(
+            forAnotherUiState.airtimeLimit.indexOf("(") + 1,
+            forAnotherUiState.airtimeLimit.indexOf(")")
+        )
     LazyColumn(
         contentPadding = PaddingValues(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -82,7 +85,7 @@ fun OtherScreen(
         item {
             CountryDropDownMenu(
                 forAnotherUiState,
-                onAnotherDialCodeChange,
+                onAnotherDialCodeChange
             )
         }
 
@@ -90,7 +93,7 @@ fun OtherScreen(
             item {
                 TelecomDropDownMenu(
                     forAnotherUiState,
-                    onAnotherAirtimeLimitChange,
+                    onAnotherAirtimeLimitChange
                 )
             }
         }
@@ -125,7 +128,7 @@ fun OtherScreen(
                             color = MaterialTheme.colorScheme.error
                         )
                     }
-                },
+                }
             )
         }
 
@@ -157,14 +160,17 @@ fun OtherScreen(
                             color = MaterialTheme.colorScheme.error
                         )
                     }
-                },
+                }
             )
         }
 
         item {
             Button(
                 onClick = {
-                    onBuyAirtimeForAnotherClick(userAmountHasLocalError.first, userPhoneHasLocalError.first)
+                    onBuyAirtimeForAnotherClick(
+                        userAmountHasLocalError.first,
+                        userPhoneHasLocalError.first
+                    )
                 },
                 shape = RoundedCornerShape(18.dp),
                 modifier = Modifier
@@ -187,7 +193,7 @@ fun OtherScreen(
 @Composable
 fun CountryDropDownMenu(
     forAnotherUiState: ForAnotherAirtimeUiState,
-    onAnotherDialCodeChange: (String) -> Unit,
+    onAnotherDialCodeChange: (String) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
     var selectedText by remember {
@@ -297,8 +303,11 @@ fun TelecomDropDownMenu(
                         )
                     },
                     onClick = {
-                        selectedAirtimeLimitText = item.name + " (" + item.lower + " - " + item.upper + ")"
-                        onAnotherAirtimeLimitChange(item.name + " (" + item.lower + " - " + item.upper + ")")
+                        selectedAirtimeLimitText =
+                            item.name + " (" + item.lower + " - " + item.upper + ")"
+                        onAnotherAirtimeLimitChange(
+                            item.name + " (" + item.lower + " - " + item.upper + ")"
+                        )
                         expanded = false
                     },
                     modifier = Modifier

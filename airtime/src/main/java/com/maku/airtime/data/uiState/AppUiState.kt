@@ -12,13 +12,14 @@ data class ForSelfAirtimeUiState(
 
 data class ForAnotherAirtimeUiState(
     val amount: String = "7000",
-    val dial_code: String = "\uD83C\uDDFA\uD83C\uDDEC +256", // TODO: Set default country code from th vm
+    // TODO: Set default country code from th vm
+    val dial_code: String = "\uD83C\uDDFA\uD83C\uDDEC +256", //
     val airtimeLimit: String = "(50 - 200000)",
     val phone: String = "0700000000",
     val error: Boolean = false,
     val loading: Boolean = false,
     val airtimeCountryList: List<AirtimeEntity> = emptyList(),
-    val airtimeLimitList: List<AirtimeLimitEntity> = emptyList(),
+    val airtimeLimitList: List<AirtimeLimitEntity> = emptyList()
 )
 
 data class CountryUiState(
@@ -26,5 +27,5 @@ data class CountryUiState(
     val dial_code: String = "",
     val emoji: String = "",
     val code: String = "",
-    val airtime_limits: List<AirtimeLimit> = emptyList(),
+    val airtime_limits: List<AirtimeLimit> = emptyList()
 )

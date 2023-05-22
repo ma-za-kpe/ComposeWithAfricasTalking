@@ -66,8 +66,11 @@ class OtherViewModel @Inject constructor(
             return Pair(true, "amount cannot be empty")
         } else if (!amountValue.isDigitsOnly()) {
             return Pair(true, "amount must only be numbers")
-        } else if (amountValue.toInt() !in (getLimit()[0].trim().toDouble()
-                .toInt() + 1)..getLimit()[1].trim().toInt()
+        } else if (
+            amountValue.toInt() !in (
+                    getLimit()[0].trim().toDouble()
+                        .toInt() + 1
+                    )..getLimit()[1].trim().toInt()
         ) {
             return Pair(true, "amount must be between ${getLimit()}")
         }
@@ -76,34 +79,37 @@ class OtherViewModel @Inject constructor(
 
     private fun getLimit(): List<String> {
         return airtimeLimit
-            .substring(airtimeLimit.indexOf("(") + 1, airtimeLimit.indexOf(")")).split("-")
+            .substring(
+                airtimeLimit.indexOf("(") + 1,
+                airtimeLimit.indexOf(")")
+            ).split("-")
     }
 
     fun onAnotherDialCodeChange(newValue: String) {
         forAnotherUiState.value = forAnotherUiState.value.copy(
             dial_code = newValue,
             airtimeLimitList = getAirtimeList(newValue),
-            airtimeLimit = getAirtimeList(newValue)?.get(0)?.name + " (" + getAirtimeList(newValue)?.get(
-                0
-            )?.lower + " - " + getAirtimeList(newValue)?.get(0)?.upper + ")"
+            airtimeLimit = getAirtimeList(newValue)?.get(0)?.name + " (" +
+                    getAirtimeList(newValue)?.get(0)?.lower + " - " +
+                    getAirtimeList(newValue)?.get(0)?.upper + ")"
         )
     }
 
     fun onAnotherAirtimeLimitChange(newValue: String) {
         forAnotherUiState.value = forAnotherUiState.value.copy(
-            airtimeLimit = newValue,
+            airtimeLimit = newValue
         )
     }
 
     fun onAnotherPhoneChange(newValue: String) {
         forAnotherUiState.value = forAnotherUiState.value.copy(
-            phone = newValue,
+            phone = newValue
         )
     }
 
     fun onAnotherAmountChange(newValue: String) {
         forAnotherUiState.value = forAnotherUiState.value.copy(
-            amount = newValue,
+            amount = newValue
         )
     }
 
@@ -113,7 +119,7 @@ class OtherViewModel @Inject constructor(
                 .collect {
                     forAnotherUiState.value = forAnotherUiState.value.copy(
                         airtimeCountryList = it,
-                        airtimeLimitList = getAirtimeList(anotherDialCode),
+                        airtimeLimitList = getAirtimeList(anotherDialCode)
                     )
                 }
         }
@@ -128,10 +134,12 @@ class OtherViewModel @Inject constructor(
         }
         launchCatching {
             forAnotherUiState.value = forAnotherUiState.value.copy(loading = true)
-            val validPhone = "${extractCode(anotherDialCode)}${if (phone[0] == '0') phone.drop(1) else phone}"
+            val validPhone =
+                "${extractCode(anotherDialCode)}${if (phone[0] == '0') phone.drop(1) else phone}"
             Log.d("TAG", "onBuyAirtimeForAnotherClick: $validPhone")
 
-            if (extractCode(anotherDialCode) != "+256") { // TODO: temporary for one country, add logic for other live countries
+            // TODO: temporary for one country, add logic for other live countries
+            if (extractCode(anotherDialCode) != "+256") {
                 SnackbarManager.showMessage(com.maku.core.ui.R.string.coming_to_country_soon)
                 forAnotherUiState.value = forAnotherUiState.value.copy(loading = false)
             } else {
@@ -143,7 +151,7 @@ class OtherViewModel @Inject constructor(
                 list.add(recipient)
                 val json = Gson().toJson(list)
 
-                // TODO: secure these keys and logic for both sandbox and, for the different countries
+                //TODO:secure these keys and logic for both sandbox and, for the different countries
                 val sent = sendAirtime(
                     "fcb5afd02a20c9c640caa210ba458a81a96125ecff6668885283b4438b54de98",
                     "easyAirtime",
