@@ -5,7 +5,7 @@
 ## Screenshots
 | #Light Mode    | #2 Dark Mode   |
 | :---: | :---: |
-| ![Screenshot_20230326_173918](https://user-images.githubusercontent.com/28810111/227786216-c562c549-3b6f-468c-89df-40f1481fcd6b.png)   | ![Screenshot_20230326_174015](https://user-images.githubusercontent.com/28810111/227786209-ba4c105c-a907-4346-865e-d783982279fe.png)   |
+| ![Screenshot_20230326_173918](https://user-images.githubusercontent.com/28810111/227786216-c562c549-3b6f-468c-89df-40f1481fcd6b.png)   | ![black](https://github.com/ma-za-kpe/ComposeWithAfricasTalking/assets/28810111/a44e9608-f849-4d93-9526-6d85c4da521d)   |
 
 ## Features
 
