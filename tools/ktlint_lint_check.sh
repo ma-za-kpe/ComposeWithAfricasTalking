@@ -14,7 +14,7 @@ else
     jar_file_path="$github_actions_path/atcompose-tools/ktlint"
 fi
 
-java -jar $jar_file_path --android app/src/**/*.kt coredata/src/**/*.kt coreNetwork/src/**/*.kt coreui/src/**/*.kt feature-Airtime/src/**/*.kt
+java -jar $jar_file_path --android app/src/**/*.kt data/src/**/*.kt domain/src/**/*.kt ui/src/**/*.kt airtime/src/**/*.kt core/src/**/*.kt
 
 status=$?
 

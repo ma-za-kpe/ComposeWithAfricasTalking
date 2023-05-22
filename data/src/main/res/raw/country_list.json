@@ -1,0 +1,244 @@
+[
+  {
+    "id": 1,
+    "name": "Kenya",
+    "dial_code": "+254",
+    "emoji": "🇰🇪",
+    "code": "KE",
+    "airtime_limits": [
+      {
+        "name": "Safaricom",
+        "lower": 5,
+        "upper": 10000
+      },
+      {
+        "name": "Airtel",
+        "lower": 10,
+        "upper": 10000
+      },
+      {
+        "name": "Telkom",
+        "lower": 10,
+        "upper": 10000
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Uganda",
+    "dial_code": "+256",
+    "emoji": "🇺🇬",
+    "code": "UG",
+    "airtime_limits": [
+      {
+        "name": "",
+        "lower": 50,
+        "upper": 200000
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Tanzania, United Republic of Tanzania",
+    "dial_code": "+255",
+    "emoji": "🇹🇿",
+    "code": "TZ",
+    "airtime_limits": [
+      {
+        "name": "",
+        "lower": 500,
+        "upper": 200000
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Nigeria",
+    "dial_code": "+234",
+    "emoji": "🇳🇬",
+    "code": "NG",
+    "airtime_limits": [
+      {
+        "name": "",
+        "lower": 50,
+        "upper": 20000
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Ethiopia",
+    "dial_code": "+251",
+    "emoji": "🇪🇹",
+    "code": "ET",
+    "airtime_limits": [
+      {
+        "name": "",
+        "lower": 5,
+        "upper": 5000
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Malawi",
+    "dial_code": "+265",
+    "emoji": "🇲🇼",
+    "code": "MW",
+    "airtime_limits": [
+      {
+        "name": "Airtel",
+        "lower": 368,
+        "upper": 73500
+      },
+      {
+        "name": "TNM",
+        "lower": 300,
+        "upper": 30000
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Zambia",
+    "dial_code": "+260",
+    "emoji": "🇿🇲",
+    "code": "ZM",
+    "airtime_limits": [
+      {
+        "name": "",
+        "lower": 5,
+        "upper": 1000
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "South Africa",
+    "dial_code": "+27",
+    "emoji": "🇿🇦",
+    "code": "ZA",
+    "airtime_limits": [
+      {
+        "name": "",
+        "lower": 5,
+        "upper": 1000
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Rwanda",
+    "dial_code": "+250",
+    "emoji": "🇷🇼",
+    "code": "RW",
+    "airtime_limits": [
+      {
+        "name": "Airtel",
+        "lower": 100,
+        "upper": 40000
+      },
+      {
+        "name": "Tigo",
+        "lower": 100,
+        "upper": 40000
+      },
+      {
+        "name": "MTN",
+        "lower": 100,
+        "upper": 500000
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Ghana",
+    "dial_code": "+233",
+    "emoji": "🇬🇭",
+    "code": "GH",
+    "airtime_limits": [
+      {
+        "name": "Airtel",
+        "lower": 0.55,
+        "upper": 1
+      },
+      {
+        "name": "Tigo",
+        "lower": 0.55,
+        "upper": 1
+      },
+      {
+        "name": "MTN",
+        "lower": 1,
+        "upper": 100
+      },
+      {
+        "name": "Vodafone",
+        "lower": 1,
+        "upper": 100
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Cameroon",
+    "dial_code": "+237",
+    "emoji": "🇨🇲",
+    "code": "CM",
+    "airtime_limits": [
+      {
+        "name": "MTN",
+        "lower": 100,
+        "upper": 500000
+      },
+      {
+        "name": "Next Tel",
+        "lower": 150,
+        "upper": 500000
+      },
+      {
+        "name": "Orange",
+        "lower": 150,
+        "upper": 25000
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Ivory Coast",
+    "dial_code": "+225",
+    "emoji": "🇨🇮",
+    "code": "XOF",
+    "airtime_limits": [
+      {
+        "name": "Moov",
+        "lower": 150,
+        "upper": 1000000
+      },
+      {
+        "name": "MTN",
+        "lower": 500,
+        "upper": 1000000
+      },
+      {
+        "name": "Orange",
+        "lower": 150,
+        "upper": 1000000
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Senegal",
+    "dial_code": "+221",
+    "emoji": "🇸🇳",
+    "code": "XOF",
+    "airtime_limits": [
+      {
+        "name": "",
+        "lower": 100,
+        "upper": 60000
+      }
+    ]
+  }
+]
