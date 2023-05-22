@@ -329,7 +329,6 @@ fun BuyForOtherScreenPreview() {
         forAnotherUiState = ForAnotherAirtimeUiState(),
         onBuyAirtimeForAnotherClick = { _, _ ->
             {
-
             }
         },
         onAnotherDialCodeChange = {},
