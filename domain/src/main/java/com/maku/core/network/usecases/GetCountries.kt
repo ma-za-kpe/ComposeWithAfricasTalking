@@ -4,9 +4,10 @@ import com.maku.core.network.model.AirtimeEntity
 import com.maku.core.network.repo.ATComposeRepository
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
 
-class GetCountries @Inject constructor(private val atComposeRepository: ATComposeRepository ) {
+class GetCountries @Inject constructor(
+  private val atComposeRepository: ATComposeRepository
+) {
   suspend operator fun invoke(): Flow<List<AirtimeEntity>> =
     atComposeRepository.getAllCountries()
 }

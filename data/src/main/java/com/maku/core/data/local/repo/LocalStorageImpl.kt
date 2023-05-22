@@ -18,8 +18,6 @@ import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-
-
 class LocalStorageImpl @Inject constructor(
     private val atDao: AirTimeDao,
     private val externalScope: CoroutineScope,
@@ -293,7 +291,10 @@ class LocalStorageImpl @Inject constructor(
 	}
 ]
     """.trimIndent()
-        return Gson().fromJson(jsonString, CountryList::class.java).toList()
+        return Gson().fromJson(
+            jsonString,
+            CountryList::class.java
+        ).toList()
     }
 
     private fun loadJSONArray(): JSONArray {
