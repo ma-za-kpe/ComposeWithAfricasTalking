@@ -9,5 +9,3 @@ sealed class ApiResult<T : Any> {
     class Error<T : Any>(val code: Int, val message: String?) : ApiResult<T>()
     class Exception<T : Any>(val e: Throwable) : ApiResult<T>()
 }
-
-
