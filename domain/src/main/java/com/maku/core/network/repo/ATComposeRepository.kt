@@ -2,7 +2,7 @@ package com.maku.core.network.repo
 
 import com.maku.core.model.airtime.SendAirtime
 import com.maku.core.network.model.AirtimeEntity
-import com.maku.core.state.NetworkResult
+import com.maku.core.state.ApiResult
 import kotlinx.coroutines.flow.Flow
 
 interface ATComposeRepository {
@@ -10,7 +10,7 @@ interface ATComposeRepository {
         apiKey: String,
         name: String,
         recipients: String
-    ): NetworkResult<SendAirtime>
+    ): ApiResult<SendAirtime>
 
     suspend fun getAllCountries(): Flow<List<AirtimeEntity>>
 }

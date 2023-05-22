@@ -5,7 +5,7 @@ import com.maku.core.data.remote.ATComposeApi
 import com.maku.core.model.airtime.SendAirtime
 import com.maku.core.network.model.AirtimeEntity
 import com.maku.core.network.repo.ATComposeRepository
-import com.maku.core.state.NetworkResult
+import com.maku.core.state.ApiResult
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -21,7 +21,7 @@ class ATComposeRepositoryImpl @Inject constructor(
         apiKey: String,
         name: String,
         recipients: String
-    ): NetworkResult<SendAirtime> {
+    ): ApiResult<SendAirtime> {
         return withContext(Dispatchers.IO) {
             try {
                 val response = api.sendAirtime(
@@ -31,20 +31,20 @@ class ATComposeRepositoryImpl @Inject constructor(
                 )
                 val body = response.body()
                 if (response.isSuccessful && body != null && body.errorMessage != "None") {
-                    NetworkResult.Success(body)
+                    ApiResult.Success(body)
                 } else {
-                    NetworkResult.Error(
+                    ApiResult.Error(
                         code = response.code(),
                         message = response.body()?.errorMessage
                     )
                 }
             } catch (e: HttpException) {
-                NetworkResult.Error(
+                ApiResult.Error(
                     code = e.code(),
                     message = e.message()
                 )
             } catch (e: Throwable) {
-                NetworkResult.Exception(e)
+                ApiResult.Exception(e)
             }
         }
     }

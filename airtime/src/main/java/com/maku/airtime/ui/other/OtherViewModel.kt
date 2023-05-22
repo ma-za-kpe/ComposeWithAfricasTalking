@@ -11,7 +11,7 @@ import com.maku.airtime.data.uiState.ForAnotherAirtimeUiState
 import com.maku.core.network.model.AirtimeLimitEntity
 import com.maku.core.network.usecases.GetCountries
 import com.maku.core.network.usecases.SendAirtime as SendAirtimeUsecase
-import com.maku.core.state.NetworkResult
+import com.maku.core.state.ApiResult
 import com.maku.core.ui.vm.MainViewModel
 import com.maku.core.util.snackbar.SnackbarManager
 import com.maku.core.util.snackbar.SnackbarMessage
@@ -159,7 +159,7 @@ class OtherViewModel @Inject constructor(
                 )
 
                 when (sent) {
-                    is NetworkResult.Success -> {
+                    is ApiResult.Success -> {
                         SnackbarManager.showMessage(
                             SnackbarMessage.StringSnackbar(
                                 "Success, Airtime sent to ${sent.data.numSent}"
@@ -167,8 +167,8 @@ class OtherViewModel @Inject constructor(
                         )
                         forAnotherUiState.value = forAnotherUiState.value.copy(loading = false)
                     }
-                    is NetworkResult.Error -> handleError("${sent.code} ${sent.message}")
-                    is NetworkResult.Exception -> handleError("${sent.e.message}")
+                    is ApiResult.Error -> handleError("${sent.code} ${sent.message}")
+                    is ApiResult.Exception -> handleError("${sent.e.message}")
                 }
             }
             forAnotherUiState.value = forAnotherUiState.value.copy(loading = false)

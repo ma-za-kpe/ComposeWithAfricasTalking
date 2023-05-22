@@ -2,8 +2,9 @@ package com.maku.core.util
 
 object ApiConstants {
     // AIRTIME
-     const val BASE_URL = "https://api.africastalking.com/"
-//    const val BASE_URL = "https://api.sandbox.africastalking.com/"
+    const val BASE_URL = "https://api.africastalking.com/"
+
+    //    const val BASE_URL = "https://api.sandbox.africastalking.com/"
     const val SEND_AIRTIME = "version1/airtime/send"
 }
 
