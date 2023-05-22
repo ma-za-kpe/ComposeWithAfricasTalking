@@ -25,6 +25,7 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maku.core.ui.R
 import com.maku.airtime.data.uiState.ForSelfAirtimeUiState
+import com.maku.airtime.ui.self.SelfViewModel
 
 @Composable
 fun BuyForSelfScreen(

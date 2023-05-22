@@ -1,6 +1,5 @@
 package com.maku.core.data.local.model
 
-
 import com.google.gson.annotations.SerializedName
 
 data class AirtimeLimit(

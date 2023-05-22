@@ -9,13 +9,13 @@ class AtComposeConvertor {
     var gson = Gson()
 
     @TypeConverter
-    fun airtimeLimitToString(airtimeLimits: List<AirtimeLimitEntity>): String{
+    fun airtimeLimitToString(airtimeLimits: List<AirtimeLimitEntity>): String {
         return gson.toJson(airtimeLimits)
     }
 
     @TypeConverter
-    fun stringToAirtimeLimit(data: String): List<AirtimeLimitEntity>{
-        val listType = object: TypeToken<List<AirtimeLimitEntity>>(){}.type
+    fun stringToAirtimeLimit(data: String): List<AirtimeLimitEntity> {
+        val listType = object : TypeToken<List<AirtimeLimitEntity>>() {}.type
         return gson.fromJson(data, listType)
     }
 }

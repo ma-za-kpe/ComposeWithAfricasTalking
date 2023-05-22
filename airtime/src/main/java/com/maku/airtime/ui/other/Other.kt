@@ -254,7 +254,7 @@ fun CountryDropDownMenu(
 @Composable
 fun TelecomDropDownMenu(
     forAnotherUiState: ForAnotherAirtimeUiState,
-    onAnotherAirtimeLimitChange: (String) -> Unit,
+    onAnotherAirtimeLimitChange: (String) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
     var selectedAirtimeLimitText by remember {
@@ -335,6 +335,6 @@ fun BuyForOtherScreenPreview() {
         onAnotherPhoneChange = {},
         onAnotherAmountChange = {},
         userPhoneHasLocalError = Pair(true, "An error occurred"),
-        userAmountHasLocalError = Pair(true, "An error occurred"),
+        userAmountHasLocalError = Pair(true, "An error occurred")
     )
 }
