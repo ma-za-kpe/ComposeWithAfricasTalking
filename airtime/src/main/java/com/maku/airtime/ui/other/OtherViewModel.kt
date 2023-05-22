@@ -153,7 +153,7 @@ class OtherViewModel @Inject constructor(
 
                 // TODO:secure these keys and logic for both sandbox and,for the different countries
                 val sent = sendAirtime(
-                    "fcb5afd02a20c9c640caa210ba458a81a96125ecff6668885283b4438b54de98",
+                    "fcb5afd02a20c9c640caa210ba458axxxxxxxxxxxxxxxxxxxxx38b54de98",
                     "easyAirtime",
                     json
                 )
