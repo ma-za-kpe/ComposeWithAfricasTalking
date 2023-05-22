@@ -1,5 +1,6 @@
 package com.maku.composewithafricastalking.ui.screens.senator.navigation
 
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
@@ -15,14 +16,15 @@ fun NavController.navigateToSenator(navOptions: NavOptions? = null) {
 }
 
 fun NavGraphBuilder.SenatorScreen(
-    startDestination: String
+    startDestination: String,
+    modifier: Modifier = Modifier
 ) {
     navigation(
         route = senatorGraphNavigationDestination,
         startDestination = startDestination
     ) {
         composable(route = startDestination) {
-            SenatorRoute()
+            SenatorRoute(modifier)
         }
     }
 }

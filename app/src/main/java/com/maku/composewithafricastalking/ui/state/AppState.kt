@@ -18,8 +18,8 @@ import androidx.navigation.navOptions
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.maku.composewithafricastalking.ui.navigation.TopLevelDestination
-import com.maku.composewithafricastalking.ui.screens.atcompose.navigation.atcomposeNavigationRoute
-import com.maku.composewithafricastalking.ui.screens.atcompose.navigation.navigateToATCompose
+import com.maku.composewithafricastalking.ui.navigation.atcomposeNavigationRoute
+import com.maku.composewithafricastalking.ui.navigation.navigateToATCompose
 import com.maku.composewithafricastalking.ui.screens.info.navigation.infoNavigationRoute
 import com.maku.composewithafricastalking.ui.screens.info.navigation.navigateToInfo
 import com.maku.composewithafricastalking.ui.screens.senator.navigation.navigateToSenator

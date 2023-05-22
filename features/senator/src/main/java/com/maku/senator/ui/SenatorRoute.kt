@@ -4,12 +4,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-
 @Composable
 fun SenatorRoute(
     modifier: Modifier = Modifier
 ) {
-   Text("makuuuuu")
+
+   SenatorScreen()
+}
+
+@Composable
+fun SenatorScreen() {
+    Text("makuuuuu")
 }
 
 @Composable
@@ -21,5 +26,5 @@ fun SenatorRoute(
     device = "spec:shape=Normal,width=360,height=640,unit=dp,dpi=480"
 )
 fun SenatorRoutePreview() {
-    SenatorRoute()
+    SenatorScreen()
 }

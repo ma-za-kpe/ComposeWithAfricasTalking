@@ -1,4 +1,4 @@
-package com.maku.composewithafricastalking.ui.screens.atcompose
+package com.maku.composewithafricastalking.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
