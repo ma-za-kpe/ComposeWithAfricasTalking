@@ -20,10 +20,10 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.maku.composewithafricastalking.ui.navigation.TopLevelDestination
 import com.maku.composewithafricastalking.ui.navigation.atcomposeNavigationRoute
 import com.maku.composewithafricastalking.ui.navigation.navigateToATCompose
-import com.maku.composewithafricastalking.ui.screens.info.navigation.infoNavigationRoute
-import com.maku.composewithafricastalking.ui.screens.info.navigation.navigateToInfo
 import com.maku.composewithafricastalking.ui.navigation.navigateToSenator
 import com.maku.composewithafricastalking.ui.navigation.senatorNavigationRoute
+import com.maku.composewithafricastalking.ui.screens.info.navigation.infoNavigationRoute
+import com.maku.composewithafricastalking.ui.screens.info.navigation.navigateToInfo
 import com.maku.core.util.snackbar.SnackbarManager
 import com.maku.core.util.snackbar.SnackbarMessage.Companion.toMessage
 import kotlinx.coroutines.CoroutineScope
