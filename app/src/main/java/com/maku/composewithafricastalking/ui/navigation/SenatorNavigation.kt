@@ -30,6 +30,4 @@ fun NavGraphBuilder.SenatorScreen(
 }
 
 @Composable
-fun SenatorRoute(modifier: Modifier) {
-
-}
+fun SenatorRoute(modifier: Modifier) {}
