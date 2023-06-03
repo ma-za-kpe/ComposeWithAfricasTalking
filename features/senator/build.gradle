@@ -67,6 +67,12 @@ dependencies {
     implementation(libs.androidx.camerax.mlkit.vision)
     implementation(libs.play.services.mlkit.text.recognition)
 
+    // cropper
+    implementation(libs.cropper)
+
+    // icons
+    implementation(libs.androidx.compose.material3.extended.icons)
+
     // Tooling
     debugImplementation(libs.androidx.compose.ui.tooling)
     // Instrumented tests
