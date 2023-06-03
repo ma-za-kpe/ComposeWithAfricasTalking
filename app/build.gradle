@@ -91,7 +91,6 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material)
-    //implementation(libs.androidx.compose.material3.extended.icons)
 
     // constraint layout
     implementation(libs.constraint.layout.compose)
