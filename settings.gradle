@@ -10,6 +10,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "ComposeWithAfricasTalking"
@@ -18,4 +19,6 @@ include ':domain'
 include ':data'
 include ':ui'
 include ':core'
-include ':airtime'
+//include ':airtime'
+include ':features:airtime'
+include ':features:senator'

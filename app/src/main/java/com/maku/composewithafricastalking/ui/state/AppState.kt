@@ -22,6 +22,8 @@ import com.maku.composewithafricastalking.ui.navigation.atcomposeNavigationRoute
 import com.maku.composewithafricastalking.ui.navigation.navigateToATCompose
 import com.maku.composewithafricastalking.ui.screens.info.navigation.infoNavigationRoute
 import com.maku.composewithafricastalking.ui.screens.info.navigation.navigateToInfo
+import com.maku.composewithafricastalking.ui.screens.senator.navigation.navigateToSenator
+import com.maku.composewithafricastalking.ui.screens.senator.navigation.senatorNavigationRoute
 import com.maku.core.util.snackbar.SnackbarManager
 import com.maku.core.util.snackbar.SnackbarMessage.Companion.toMessage
 import kotlinx.coroutines.CoroutineScope
@@ -90,6 +92,7 @@ class AppState(
         @Composable get() = when (currentDestination?.route) {
             atcomposeNavigationRoute -> TopLevelDestination.AIRTIME
             infoNavigationRoute -> TopLevelDestination.INFO
+            senatorNavigationRoute -> TopLevelDestination.SENATOR
             else -> null
         }
 
@@ -107,6 +110,7 @@ class AppState(
         when (topLevelDestination) {
             TopLevelDestination.AIRTIME -> navController.navigateToATCompose(topLevelNavOptions)
             TopLevelDestination.INFO -> navController.navigateToInfo(topLevelNavOptions)
+            TopLevelDestination.SENATOR -> navController.navigateToSenator(topLevelNavOptions)
             else -> {}
         }
     }
