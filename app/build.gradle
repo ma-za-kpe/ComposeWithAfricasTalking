@@ -57,7 +57,8 @@ dependencies {
     implementation project(path: ':core')
     implementation project(path: ':domain')
     implementation project(path: ':ui')
-    implementation project(path: ':airtime')
+    implementation project(path: ':features:airtime')
+    implementation project(path: ':features:senator')
 
     def composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
@@ -89,10 +90,7 @@ dependencies {
     // Compose
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
-
-    // TODO: Add full set of material icons
-    // implementation("androidx.compose.material:material-icons-extended")
+    implementation(libs.androidx.compose.material)
 
     // constraint layout
     implementation(libs.constraint.layout.compose)

@@ -5,6 +5,7 @@ import androidx.compose.material.icons.Icons.Default
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.PlayArrow
+import androidx.compose.material.icons.outlined.ThumbUp
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.maku.core.ui.R
 enum class TopLevelDestination(
@@ -24,5 +25,11 @@ enum class TopLevelDestination(
         unselectedIcon = Icons.Outlined.Info,
         iconTextId = R.string.info,
         titleTextId = R.string.info
+    ),
+    SENATOR(
+        selectedIcon = Icons.Outlined.ThumbUp,
+        unselectedIcon = Icons.Outlined.ThumbUp,
+        iconTextId = R.string.senator,
+        titleTextId = R.string.senator
     )
 }

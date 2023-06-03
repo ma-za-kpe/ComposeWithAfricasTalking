@@ -1,4 +1,4 @@
-package com.maku.composewithafricastalking.ui.screens.atcompose
+package com.maku.composewithafricastalking.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,14 +40,12 @@ fun ATComposeScreen(
 ) {
     val pagerState = rememberPagerState()
     val coroutineScope = rememberCoroutineScope()
-    val list = (0..5).map { it.toString() }
 
     ConstraintLayout(
         modifier = modifier
             .fillMaxSize()
             .padding(15.dp)
     ) {
-        // Create references for the composables to constrain
         val (tabs, pager, history) = createRefs()
 
         TabRow(
@@ -64,10 +62,6 @@ fun ATComposeScreen(
             containerColor = Color.Transparent,
             indicator = { tabPositions ->
                 TabRowDefaults.Indicator(
-                    // to try and fix this issue: https://github.com/google/accompanist/issues/1076#issuecomment-1087484721
-//                        Modifier.pagerTabIndicatorOffset(
-//                                pagerState, tabPositions
-//                            ),
                     color = Color.Transparent
                 )
             },
