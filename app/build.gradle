@@ -60,8 +60,10 @@ dependencies {
     implementation project(path: ':features:airtime')
     implementation project(path: ':features:senator')
 
-    implementation libs.androidx.compose.bom
-    androidTestImplementation libs.androidx.compose.bom
+    def composeBom = platform(libs.androidx.compose.bom)
+
+    implementation composeBom
+    androidTestImplementation composeBom
 
     // Compose
     implementation(libs.androidx.compose.ui)

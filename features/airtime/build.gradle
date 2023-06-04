@@ -49,8 +49,10 @@ dependencies {
     implementation project(path: ':domain')
     implementation project(path: ':ui')
 
-    implementation libs.androidx.compose.bom
-    androidTestImplementation libs.androidx.compose.bom
+    def composeBom = platform(libs.androidx.compose.bom)
+
+    implementation composeBom
+    androidTestImplementation composeBom
 
     // Core Android dependencies
     implementation(libs.androidx.activity.compose)
