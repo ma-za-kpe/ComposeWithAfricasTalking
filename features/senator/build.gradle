@@ -45,6 +45,9 @@ dependencies {
     implementation project(path: ':domain')
     implementation project(path: ':ui')
 
+    implementation libs.androidx.compose.bom
+    androidTestImplementation libs.androidx.compose.bom
+
     // Core Android dependencies
     implementation(libs.androidx.activity.compose)
 
@@ -58,6 +61,8 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material)
+    // Optional - Add full set of material icons
+    implementation(libs.material.icons.extended)
 
     // camera
     implementation(libs.androidx.camerax.version2)
