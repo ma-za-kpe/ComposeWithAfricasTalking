@@ -31,11 +31,16 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17))
+        }
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 }
 
@@ -44,6 +49,11 @@ dependencies {
     implementation project(path: ':data')
     implementation project(path: ':domain')
     implementation project(path: ':ui')
+
+    def composeBom = platform(libs.androidx.compose.bom)
+
+    implementation composeBom
+    androidTestImplementation composeBom
 
     // Core Android dependencies
     implementation(libs.androidx.activity.compose)
@@ -58,7 +68,8 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material)
-    //implementation(libs.androidx.compose.material3.extended.icons)
+    // Optional - Add full set of material icons
+    implementation(libs.material.icons.extended)
 
     // camera
     implementation(libs.androidx.camerax.version2)
@@ -66,9 +77,6 @@ dependencies {
     implementation(libs.androidx.camerax.version.view)
     implementation(libs.androidx.camerax.mlkit.vision)
     implementation(libs.play.services.mlkit.text.recognition)
-
-    // cropper
-    implementation(libs.cropper)
 
     // Tooling
     debugImplementation(libs.androidx.compose.ui.tooling)
